@@ -949,10 +949,30 @@ setInterval(()=>{if((state.nightMode||"auto")==="auto")applyNightMode();},60000)
 function applyTheme(){updateSubtitle();applyColorTheme();applyNightMode();}
 function updateSubtitle(){const f=document.getElementById("p_sex").value==="f";const g=document.getElementById("p_goal").value;const gT=g==="bulk"?"Набор":g==="maintain"?"Поддержание":"Похудение";document.getElementById("appTitle").textContent=activeProfile().name;document.getElementById("appSubtitle").textContent=`${f?"Женщина":"Мужчина"} · ${document.getElementById("p_age").value} лет · ${document.getElementById("p_height").value} см · ${document.getElementById("p_weight").value} кг · ${gT}`;}
 
-function getBaseMenu(){const pd=profileData||{};return pd.sex==="f"?WEEK_MENU_F:WEEK_MENU_M;}
+function getRawMenu(){const pd=profileData||{};return pd.sex==="f"?WEEK_MENU_F:WEEK_MENU_M;}
+function getMenuTarget(){const t=targets||{};return Number(t.kcal)>0?t:null;}
+function scaleQty(n,q,factor){const p=PRODUCTS[n];if(p&&p.unitWeight){const units=Math.max(1,Math.round(q*factor/p.unitWeight));return units*p.unitWeight;}return Math.max(5,Math.round(q*factor/5)*5);}
+function isProteinFood(n){const p=PRODUCTS[n];return!!(p&&p.k>0&&p.p*4/p.k>=0.35);}
+/* Подгоняет день рациона под цель: белковые продукты и остальное масштабируются отдельно,
+   чтобы попасть и в калории, и в белок. */
+function fitDayToTargets(day,t){
+  let Kp=0,Pp=0,Ko=0,Po=0;
+  Object.values(day.meals).forEach(m=>m.dishes.forEach(d=>d.foods.forEach(([n,q])=>{const pr=PRODUCTS[n];if(!pr)return;const f=q/100;if(isProteinFood(n)){Kp+=pr.k*f;Pp+=pr.p*f;}else{Ko+=pr.k*f;Po+=pr.p*f;}})));
+  const K=Number(t.kcal),P=Number(t.prot)||0;
+  if(!(Kp+Ko>0))return day;
+  let a=K/(Kp+Ko),b=a;
+  const det=Kp*Po-Ko*Pp;
+  if(P>0&&Kp>0&&Ko>0&&Math.abs(det)>1e-6){
+    a=Math.min(2.5,Math.max(0.4,(K*Po-Ko*P)/det));
+    b=Math.min(4,Math.max(0.3,(K-a*Kp)/Ko));
+    a=Math.min(3,Math.max(0.4,(K-b*Ko)/Kp));
+  }
+  return{day:day.day,meals:Object.fromEntries(Object.entries(day.meals).map(([mn,mo])=>[mn,{dishes:mo.dishes.map(d=>({name:d.name,time:d.time,foods:d.foods.map(([n,q])=>[n,scaleQty(n,q,isProteinFood(n)?a:b)])}))}]))};
+}
+function getBaseMenu(){const raw=getRawMenu();const t=getMenuTarget();return t?raw.map(d=>fitDayToTargets(d,t)):raw;}
 function menuKey(di,mn){const pd=profileData||{};return`${pd.sex||"m"}_${pd.goal||"cut"}_${di}_${mn}`;}
-function getCurrentMenu(){const base=getBaseMenu();return base.map((day,idx)=>{const meals={};Object.keys(day.meals).forEach(m=>{const key=menuKey(idx,m);const ov=menuOverrides[key];if(ov&&ov.dishes){meals[m]={dishes:ov.dishes};}else{meals[m]=day.meals[m];}});return{day:day.day,meals};});}
-function getMenuLabel(){const pd=profileData||{};const s=pd.sex||"m";const g=pd.goal||"cut";const gl=g==="bulk"?"набор":g==="maintain"?"поддержание":"похудение";return`Рацион: ${s==="f"?"женский":"мужской"} · цель: ${gl}`;}
+function getCurrentMenu(){const base=getBaseMenu();return base.map((day,idx)=>{const meals={};Object.keys(day.meals).forEach(m=>{const key=menuKey(idx,m);const ov=menuOverrides[key];if(ov&&ov.dishes){const t=getMenuTarget();const f=(t&&ov.forKcal)?t.kcal/ov.forKcal:1;meals[m]={dishes:Math.abs(f-1)<0.01?ov.dishes:ov.dishes.map(d=>({name:d.name,time:d.time,foods:d.foods.map(([n,q])=>[n,scaleQty(n,q,f)])}))};}else{meals[m]=day.meals[m];}});return{day:day.day,meals};});}
+function getMenuLabel(){const pd=profileData||{};const s=pd.sex||"m";const g=pd.goal||"cut";const gl=g==="bulk"?"набор":g==="maintain"?"поддержание":"похудение";const t=getMenuTarget();return`Рацион: ${s==="f"?"женский":"мужской"} · цель: ${gl}`+(t?` · ~${t.kcal} ккал, белок ${t.prot} г в день`:"");}
 function resetMenuOverrides(){if(!confirm("Сбросить все изменения рациона?"))return;menuOverrides={};save();renderMenu();showToast("Рацион сброшен");}
 function dishKBJU(dish){let k=0,p=0,f=0,c=0;(dish.foods||[]).forEach(([n,q])=>{const pr=PRODUCTS[n];if(!pr)return;const ff=(Number(q)||0)/100;k+=pr.k*ff;p+=pr.p*ff;f+=pr.f*ff;c+=pr.c*ff;});return{kcal:Math.round(k),prot:Math.round(p),fat:Math.round(f),carb:Math.round(c)};}
 function mealKBJU(m){let k=0,p=0,f=0,c=0;(m.dishes||[]).forEach(d=>{const kb=dishKBJU(d);k+=kb.kcal;p+=kb.prot;f+=kb.fat;c+=kb.carb;});return{kcal:k,prot:p,fat:f,carb:c};}
@@ -1028,7 +1048,7 @@ function saveDishesFromDOM(di,mn){
   });
   if(!newDishes.length){showToast("Пустое блюдо");return;}
   if(!menuOverrides[key])menuOverrides[key]={};
-  menuOverrides[key].dishes=newDishes;
+  menuOverrides[key].dishes=newDishes;menuOverrides[key].forKcal=getMenuTarget()?.kcal||0;
   save();renderMenu();showToast("Сохранено");
 }
 
@@ -1107,7 +1127,7 @@ function rebuildMenuFromFridge(){
         if(dishHasProteinSub)dishWarnings.push(dish.name);
         return{name:dish.name,time:dish.time,foods:newFoods};
       });
-      if(hasSub)newOverrides[key]={dishes};
+      if(hasSub)newOverrides[key]={dishes,forKcal:getMenuTarget()?.kcal||0};
     });
   });
   if(!totalSubs){showToast("Все продукты есть — рацион не изменился");return;}
@@ -1409,7 +1429,7 @@ function renderActivity(){
   set("s_feel",num(avg("feel"),1));
 }
 
-function addWeight(){const date=document.getElementById("wd_date").value||todayISO();const w=Number(document.getElementById("wd_weight").value)||0;if(w<=0||w>500){showToast("Введите корректный вес");return;}const rec={date,weight:w,waist:Number(document.getElementById("wd_waist").value)||0,fat:Number(document.getElementById("wd_fat").value)||0};const i=weightLog.findIndex(x=>x.date===date);if(i>=0)weightLog[i]=rec;else weightLog.push(rec);weightLog.sort((a,b)=>a.date.localeCompare(b.date));save();renderWeight();drawChart();document.getElementById("p_weight").value=w;saveProfile();showToast("Сохранено");}
+function addWeight(){const date=document.getElementById("wd_date").value||todayISO();const w=Number(document.getElementById("wd_weight").value)||0;if(w<=0||w>500){showToast("Введите корректный вес");return;}const rec={date,weight:w,waist:Number(document.getElementById("wd_waist").value)||0,fat:Number(document.getElementById("wd_fat").value)||0};const i=weightLog.findIndex(x=>x.date===date);if(i>=0)weightLog[i]=rec;else weightLog.push(rec);weightLog.sort((a,b)=>a.date.localeCompare(b.date));save();renderWeight();drawChart();if(date>=(weightLog[weightLog.length-1]?.date||"")){document.getElementById("p_weight").value=w;if(rec.fat>0)document.getElementById("p_fat").value=rec.fat;calcAll();}showToast("Сохранено");}
 function renderWeight(){const rows=[...weightLog].sort((a,b)=>b.date.localeCompare(a.date));const list=document.getElementById("w_list");if(!list)return;list.innerHTML="";const h=profileData.height||175;if(!rows.length)list.innerHTML='<div class="empty">Нет</div>';else rows.forEach(r=>{const imt=r.weight/((h/100)**2);const item=document.createElement("div");item.className="list-item";item.innerHTML=`<div class="row1"><span class="name">${fmtDate(r.date)}</span><span class="kcal-big">${num(r.weight,1)} кг</span></div><div class="macros"><span>ИМТ <b>${num(imt,1)}</b></span></div><button class="rm" onclick="removeWeight('${r.date}')">✕</button>`;list.appendChild(item);});}
 function removeWeight(date){weightLog=weightLog.filter(x=>x.date!==date);save();renderWeight();drawChart();}
 function drawChart(){const cv=document.getElementById("wchart");if(!cv)return;const cs=getComputedStyle(document.body);const cP=cs.getPropertyValue('--p').trim()||"#2980b9";const cPl=cs.getPropertyValue('--pl').trim()||"#5dade2";const cBd=cs.getPropertyValue('--bd').trim()||"#d6e3ec";const dpr=window.devicePixelRatio||1;const r=cv.parentElement.getBoundingClientRect();const W=r.width,H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.width=W+"px";cv.style.height=H+"px";const ctx=cv.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);const sorted=[...weightLog].sort((a,b)=>a.date.localeCompare(b.date));if(sorted.length<2){ctx.fillStyle="#94a3b8";ctx.font="13px -apple-system";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("Нужны 2 записи",W/2,H/2);return;}const pL=42,pR=12,pT=14,pB=28;const cw=W-pL-pR,ch=H-pT-pB;const ws=sorted.map(x=>x.weight);const mn=Math.min(...ws)-1,mx=Math.max(...ws)+1;const X=i=>pL+(i/(sorted.length-1))*cw;const Y=w=>pT+(1-(w-mn)/(mx-mn))*ch;ctx.strokeStyle=cBd;ctx.lineWidth=1;for(let i=0;i<=4;i++){const yy=pT+(ch/4)*i;ctx.beginPath();ctx.moveTo(pL,yy);ctx.lineTo(pL+cw,yy);ctx.stroke();ctx.fillStyle="#94a3b8";ctx.font="11px -apple-system";ctx.textAlign="right";ctx.textBaseline="middle";ctx.fillText((mx-((mx-mn)/4)*i).toFixed(1),pL-6,yy);}ctx.strokeStyle=cP;ctx.lineWidth=2.5;ctx.beginPath();sorted.forEach((r,i)=>{const x=X(i),y=Y(r.weight);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.stroke();sorted.forEach((r,i)=>{ctx.beginPath();ctx.arc(X(i),Y(r.weight),4,0,Math.PI*2);ctx.fillStyle=cPl;ctx.fill();});}
@@ -1494,7 +1514,7 @@ function calcAll(){
   document.getElementById("out_carb_norm").textContent=`${targetCarb} г`;
   document.getElementById("out_fiber_norm").textContent=`${targetFiber} г`;
   document.getElementById("out_water_norm").textContent=`${targetWater.toFixed(1)} л`;
-  targets={kcal:targetKcal,prot:targetProt,fat:targetFat,carb:targetCarb};save();renderDash();updateSubtitle();
+  targets={kcal:targetKcal,prot:targetProt,fat:targetFat,carb:targetCarb};save();renderDash();updateSubtitle();updateChip();renderMenu();
 }
 function renderDash(){
   const today=todayISO();
@@ -1570,9 +1590,10 @@ function init(){
   document.getElementById("rep_from").value=isoMinusDays(t,6);
   loadAll();setupHandlers();setupNav();
   applyNightMode();applyColorTheme();
-  document.getElementById("p_sex").addEventListener("change",()=>{saveProfile();renderMenu();calcAll();});
-  document.getElementById("p_goal").addEventListener("change",()=>{saveProfile();calcAll();renderMenu();});
-  document.getElementById("p_act").addEventListener("change",()=>{saveProfile();calcAll();});
+  document.getElementById("p_sex").addEventListener("change",calcAll);
+  document.getElementById("p_goal").addEventListener("change",calcAll);
+  document.getElementById("p_act").addEventListener("change",calcAll);
+  ["p_age","p_height","p_weight","p_fat"].forEach(id=>document.getElementById(id).addEventListener("change",calcAll));
   document.getElementById("nightMode").addEventListener("change",e=>{state.nightMode=e.target.value;save();applyNightMode();});
   document.getElementById("rep_from").addEventListener("change",buildReport);
   document.getElementById("rep_to").addEventListener("change",buildReport);
