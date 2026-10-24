@@ -20,11 +20,19 @@ body.theme-orange{--p:#ea580c;--pd:#9a3412;--pl:#fb923c;--bg:#fff7ed;--bd:#fed7a
 body.theme-ocean{--p:#0891b2;--pd:#155e75;--pl:#22d3ee;--bg:#f0fbfd;--bd:#a5f3fc;--surface2:#f0fbfd;--surface3:#cffafe;--surface4:#a5f3fc;--grad:linear-gradient(135deg,#0891b2,#155e75)}
 body.theme-forest{--p:#16a34a;--pd:#14532d;--pl:#4ade80;--bg:#f0fdf4;--bd:#bbf7d0;--surface2:#f0fdf4;--surface3:#dcfce7;--surface4:#bbf7d0;--grad:linear-gradient(135deg,#16a34a,#14532d)}
 body.theme-sakura{--p:#ec4899;--pd:#9d174d;--pl:#f9a8d4;--bg:#fff0f7;--bd:#fbcfe8;--surface2:#fff0f7;--surface3:#fce7f3;--surface4:#fbcfe8;--grad:linear-gradient(135deg,#ec4899,#9d174d)}
+body.theme-cloud{--p:#6f5e53;--pd:#4a3d35;--pl:#b9aa9d;--bg:#f0eee9;--bd:#e0dbd2;--surface2:#f5f3ee;--surface3:#e9e5dd;--surface4:#ddd6ca;--focus:#6f5e5326;--grad:linear-gradient(135deg,#6f5e53,#4a3d35)}
+body.theme-teal{--p:#0f6e6e;--pd:#0a4a4a;--pl:#4fb3aa;--bg:#eff8f7;--bd:#c4e3e0;--surface2:#eff8f7;--surface3:#d6eeeb;--surface4:#b6e0db;--focus:#0f6e6e26;--grad:linear-gradient(135deg,#0f6e6e,#0a4a4a)}
+body.theme-fuchsia{--p:#c2187a;--pd:#86104f;--pl:#f06ab4;--bg:#fdf2f8;--bd:#f7cde4;--surface2:#fdf2f8;--surface3:#fbe1ef;--surface4:#f7c6e1;--focus:#c2187a26;--grad:linear-gradient(135deg,#c2187a,#86104f)}
+body.theme-aura{--p:#4a6fa5;--pd:#2f4a73;--pl:#a9bfe0;--bg:#f3f6fb;--bd:#d3deee;--surface2:#f3f6fb;--surface3:#e3eaf6;--surface4:#cfdbef;--focus:#4a6fa526;--grad:linear-gradient(135deg,#4a6fa5,#2f4a73)}
+body.theme-amber{--p:#9a5b16;--pd:#6e3f0c;--pl:#e3a857;--bg:#fdf7ee;--bd:#f1dcbc;--surface2:#fdf7ee;--surface3:#f8ead3;--surface4:#f1d9b0;--focus:#9a5b1626;--grad:linear-gradient(135deg,#9a5b16,#6e3f0c)}
+body.theme-mint{--p:#137a60;--pd:#0d5a46;--pl:#8fdcbc;--bg:#f0fbf6;--bd:#c3eedb;--surface2:#f0fbf6;--surface3:#dcf6ea;--surface4:#bdecd6;--focus:#137a6026;--grad:linear-gradient(135deg,#137a60,#0d5a46)}
 body.theme-night{--bg:#0f172a;--sf:#1e293b;--bd:#334155;--tx:#f1f5f9;--mt:#94a3b8;--surface2:#0f172a;--surface3:#334155;--surface4:#475569;--glass:rgba(30,41,59,.78);--grad:linear-gradient(135deg,#1e293b,#0f172a)}
+body.theme-night{--pd:#cbd5e1}
+body.theme-night .toast{background:#334155}
 body.theme-night input,body.theme-night select,body.theme-night textarea{background:#0f172a;color:#f1f5f9;border-color:#334155}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;padding:0;overflow-x:hidden;overflow-x:clip;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;font-size:15px;line-height:1.5;-webkit-text-size-adjust:100%}
-header{position:relative;z-index:50;background:var(--grad);color:#fff;padding:calc(var(--st) + 10px) 16px 12px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+html,body{margin:0;padding:0;overflow-x:hidden;background:var(--bg);color:var(--tx);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;font-size:15px;line-height:1.5;-webkit-text-size-adjust:100%}
+header{position:sticky;top:0;z-index:50;background:var(--grad);color:#fff;padding:calc(var(--st) + 10px) 16px 12px;box-shadow:0 4px 20px rgba(0,0,0,.15)}
 .header-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
 .profile-chip{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 6px;background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border-radius:24px;border:1px solid rgba(255,255,255,.18);cursor:pointer;max-width:70%;min-width:0}
 .profile-chip .avatar{width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
@@ -39,7 +47,7 @@ nav.top-nav::-webkit-scrollbar,nav.bottom-nav::-webkit-scrollbar,.muscle-tabs::-
 nav.top-nav button{flex:1 0 auto;padding:14px;border:none;background:none;font-size:12.5px;color:var(--mt);border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap;font-family:inherit;font-weight:500}
 nav.top-nav button.active{color:var(--p);border-bottom-color:var(--p);font-weight:600}
 nav.bottom-nav{position:fixed;bottom:0;left:0;right:0;z-index:60;display:flex;background:var(--glass);backdrop-filter:blur(24px);border-top:1px solid var(--bd);padding-bottom:var(--sb);overflow-x:auto}
-nav.bottom-nav button{flex:1 1 0;min-width:0;padding:8px 2px 6px;border:none;background:none;color:var(--mt);font-size:9px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;white-space:nowrap;font-family:inherit;position:relative}
+nav.bottom-nav button{flex:1 1 0;min-width:0;padding:8px 2px 6px;border:none;background:none;color:var(--mt);font-size:10.5px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;min-height:56px;justify-content:center;white-space:nowrap;font-family:inherit;position:relative}
 nav.bottom-nav button .ico{font-size:19px;line-height:1}
 nav.bottom-nav button.active{color:var(--p);font-weight:600}
 nav.bottom-nav button.active::before{content:"";position:absolute;top:4px;width:22px;height:3px;background:var(--p);border-radius:2px}
@@ -94,11 +102,11 @@ body.theme-night .totals .tile .value{color:var(--tx)}
 .list-item .kcal-big{position:absolute;right:14px;top:12px;font-weight:800;color:var(--pd);font-size:15px}
 .list-item .rm{position:absolute;right:8px;bottom:8px;background:none;border:none;color:var(--dg);font-size:16px;padding:6px 10px;cursor:pointer}
 .menu-day{border:1px solid var(--bd);border-radius:var(--r);margin-bottom:10px;overflow:hidden;background:var(--sf)}
-.menu-day summary{padding:14px 46px 14px 16px;cursor:pointer;background:var(--surface3);font-weight:700;color:var(--pd);font-size:14px;list-style:none;position:relative;display:block}
-body.theme-night .menu-day summary{color:var(--tx)}
+.menu-day>summary{padding:14px 46px 14px 16px;cursor:pointer;background:var(--surface3);font-weight:700;color:var(--pd);font-size:14px;list-style:none;position:relative;display:block}
+body.theme-night .menu-day>summary{color:var(--tx)}
 .menu-day summary::-webkit-details-marker,.ex-card summary::-webkit-details-marker,.edit-box summary::-webkit-details-marker,.dish-recipe summary::-webkit-details-marker{display:none}
-.menu-day summary::after{content:"▾";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--p);transition:transform .2s}
-.menu-day[open] summary::after{transform:translateY(-50%) rotate(180deg)}
+.menu-day>summary::after{content:"▾";position:absolute;right:18px;top:50%;transform:translateY(-50%);color:var(--p);transition:transform .2s}
+.menu-day[open]>summary::after{transform:translateY(-50%) rotate(180deg)}
 .menu-day .body{padding:14px 16px}
 .menu-meal{padding:14px 0;border-bottom:1px dashed var(--bd)}
 .menu-meal:last-of-type{border-bottom:none}
@@ -183,12 +191,13 @@ body.theme-night .sport-note{color:var(--tx)}
 .autocomplete-item:last-child{border-bottom:none}
 .autocomplete-item .ac-kbju{font-size:11px;color:var(--mt);white-space:nowrap}
 .autocomplete-empty{padding:14px;color:var(--mt);font-style:italic;text-align:center;font-size:13px}
-.report-table{width:100%;border-collapse:collapse;font-size:12px;margin-top:12px;overflow-x:auto;display:block}
-.report-table thead,.report-table tbody{display:table;width:100%;table-layout:fixed;min-width:820px}
+.report-table{width:100%;border-collapse:separate;border-spacing:0;font-size:12px;margin-top:12px;min-width:760px}
+.report-table th:first-child,.report-table td:first-child{position:sticky;left:0;z-index:1;box-shadow:2px 0 4px rgba(15,23,42,.08)}
 .report-table th,.report-table td{padding:8px 5px;border:1px solid var(--bd);text-align:center;white-space:nowrap}
 .report-table th{background:var(--surface3);color:var(--p);font-weight:700;font-size:10.5px;text-transform:uppercase}
 .report-table .day-cell{text-align:left;font-weight:600;background:var(--surface2)}
-.report-wrap{overflow-x:auto;margin:0 -16px;padding:0 16px}
+.report-table th:first-child{background:var(--surface3)}
+.report-wrap{overflow-x:auto;border-radius:10px}
 .date-range-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
 @media(min-width:560px){.date-range-row{grid-template-columns:1fr 1fr auto auto}}
 .modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.5);backdrop-filter:blur(6px);z-index:200;display:none;align-items:flex-end;justify-content:center}
@@ -217,6 +226,8 @@ body.theme-night .modal-header h3{color:var(--tx)}
 .palette-item.active{border-color:var(--p);background:var(--surface4)}
 .palette-item .palette-dots{display:flex;justify-content:center;gap:3px;margin-bottom:8px}
 .palette-item .dot{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4)}
+.palette-item .palette-tag{display:inline-block;margin-top:4px;padding:1px 7px;border-radius:10px;background:var(--surface3);color:var(--mt);font-size:9.5px;font-weight:700;letter-spacing:.02em}
+.palette-item{position:relative}
 .palette-item .palette-name{font-size:11px;font-weight:600}
 .fridge-cat{margin-bottom:14px}
 .fridge-cat h3{margin:0 0 8px;font-size:11.5px;color:var(--p);text-transform:uppercase;font-weight:700}
@@ -226,10 +237,93 @@ body.theme-night .modal-header h3{color:var(--tx)}
 .fridge-item.on{background:var(--surface4);color:var(--pd);font-weight:600;border-color:var(--pl)}
 .fridge-item .chk{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;background:var(--sf)}
 .fridge-item.on .chk{background:var(--p);border-color:var(--p)}
+.today-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.today-head h2{margin-bottom:6px}
+.today-date{font-size:12.5px;color:var(--mt)}
+.ring-row{display:flex;align-items:center;gap:18px;margin:6px 0 16px}
+.ring{position:relative;width:132px;height:132px;flex-shrink:0}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11}
+.ring .ring-bg{stroke:var(--surface3)}
+.ring .ring-fg{stroke:var(--ok);stroke-linecap:round;transition:stroke-dashoffset .6s,stroke .3s}
+.ring.warn .ring-fg{stroke:var(--wn)}
+.ring.over .ring-fg{stroke:var(--dg)}
+.ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.ring-num{font-size:26px;font-weight:800;line-height:1.1;color:var(--tx)}
+.ring-cap{font-size:11px;color:var(--mt);max-width:90px;line-height:1.25}
+.ring.over .ring-num{color:var(--dg)}
+.ring-stats{flex:1;display:flex;flex-direction:column;gap:8px;min-width:0}
+.ring-stats>div{display:flex;justify-content:space-between;gap:8px;font-size:13px}
+.rs-label{color:var(--mt)}
+.rs-val{font-weight:700;color:var(--tx);white-space:nowrap}
+.macro-bars{display:flex;flex-direction:column;gap:10px}
+.macro .m-top{display:flex;justify-content:space-between;font-size:12.5px;color:var(--mt)}
+.macro .m-top b{color:var(--tx);font-weight:700}
+.macro .progress{margin-top:5px;height:7px}
+.quick-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:16px}
+.quick-actions button{display:flex;flex-direction:column;align-items:center;gap:4px;padding:12px 4px;border:1.5px solid var(--bd);background:var(--surface2);border-radius:14px;font:inherit;font-size:12px;font-weight:600;color:var(--tx);cursor:pointer;min-height:64px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:350px){.quick-actions button{font-size:10.5px}}
+.quick-actions button span{font-size:22px;line-height:1}
+.quick-actions button:active{transform:scale(.96);background:var(--surface4)}
+.profile-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;padding-bottom:14px}
+.profile-link b{display:block;font-size:14px}
+.profile-link .btn{width:auto;min-width:0;flex-shrink:0}
+.hint-line{display:block;font-size:12px;color:var(--mt);margin:0 0 8px}
+.profile-link .hint-line{margin:0}
+.flash{animation:flash 1.2s}
+@keyframes flash{0%,40%{box-shadow:0 0 0 3px var(--pl)}100%{box-shadow:var(--sh)}}
+.recent-chips{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+.recent-chips button{padding:8px 12px;border-radius:20px;border:1.5px solid var(--bd);background:var(--surface2);color:var(--tx);font:inherit;font-size:12.5px;cursor:pointer;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.recent-chips button small{color:var(--mt);margin-left:4px}
+.recent-chips button:active{background:var(--surface4);transform:scale(.97)}
+.day-chips{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px;margin:0 0 10px}
+.day-chips button{padding:10px 0;border-radius:12px;border:1.5px solid var(--bd);background:var(--sf);color:var(--tx);font:inherit;font-size:13px;font-weight:600;cursor:pointer;position:relative}
+.day-chips button.active{background:var(--p);border-color:var(--p);color:#fff}
+.day-chips button.today::after{content:"";position:absolute;bottom:4px;left:50%;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--p)}
+.day-chips button.active.today::after{background:#fff}
+.ex-search{display:flex;align-items:center;gap:10px;margin:0 0 10px}
+.ex-search input{flex:1}
+.ex-search span{font-size:12px;color:var(--mt);white-space:nowrap}
+.w-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.w-stats>div{background:var(--surface3);border-radius:var(--r-sm);padding:10px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.w-stats span{font-size:10.5px;color:var(--mt);text-transform:uppercase;font-weight:700}
+.w-stats b{font-size:14px;color:var(--tx)}
+.w-stats b.muted{color:var(--mt);font-weight:500}
+.w-stats small{font-size:11px;color:var(--mt)}
+.backup-banner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;border:1.5px solid var(--wn)}
+.backup-banner[hidden]{display:none}
+.backup-banner b{display:block;font-size:14px}
+.backup-banner .hint-line{margin:2px 0 0}
+.bb-actions{display:flex;gap:8px}
+.bb-actions .btn{width:auto;min-width:0}
+svg.ic{width:1.2em;height:1.2em;flex-shrink:0;vertical-align:-.24em}
+.card h2 svg.ic{color:var(--p);margin-right:.4em}
+body.theme-night .card h2 svg.ic{color:var(--pl)}
+nav.bottom-nav button .ico svg.ic{width:24px;height:24px;vertical-align:0}
+nav.bottom-nav button.active .ico svg.ic{stroke-width:2.4}
+.more-list button .ico svg.ic{width:26px;height:26px;color:var(--p);vertical-align:0}
+body.theme-night .more-list button .ico svg.ic{color:var(--pl)}
+.quick-actions button span svg.ic{width:26px;height:26px;color:var(--p);vertical-align:0}
+body.theme-night .quick-actions button span svg.ic{color:var(--pl)}
+.quick-actions button:nth-child(3) span svg.ic{color:#0ea5e9}
+.quick-actions button:nth-child(2) span svg.ic{color:var(--wn)}
+.rs-label{display:inline-flex;align-items:center;gap:6px}
+.rs-label svg.ic{width:16px;height:16px;color:var(--p);vertical-align:0}
+body.theme-night .rs-label svg.ic{color:var(--pl)}
+.icon-btn svg.ic{width:20px;height:20px;vertical-align:0}
+.more-list{display:flex;flex-direction:column;gap:8px}
+.more-list button{display:grid;grid-template-columns:40px 1fr;grid-template-rows:auto auto;align-items:center;text-align:left;padding:12px 14px;background:var(--surface2);border:1.5px solid var(--bd);border-radius:14px;color:var(--tx);font:inherit;font-weight:600;font-size:15px;cursor:pointer;min-height:56px}
+.more-list button .ico{grid-row:1/3;font-size:22px}
+.more-list button small{font-weight:400;font-size:12px;color:var(--mt)}
+.more-list button.active{border-color:var(--p);background:var(--surface4)}
+input.invalid,select.invalid{border-color:var(--dg)!important;box-shadow:0 0 0 4px rgba(220,38,38,.15)!important}
+.report-hint{font-size:11.5px;color:var(--mt);margin:6px 0 0}
+@media(min-width:900px){.report-hint{display:none}}
 .fridge-stats{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:var(--surface3);border-radius:10px;margin-bottom:12px;font-size:13px;color:var(--pd);font-weight:600;flex-wrap:wrap;gap:8px}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><symbol id="i-ring" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9" opacity=".3"/><path d="M12 3a9 9 0 0 1 8.6 11.6"/><circle cx="12" cy="12" r="3.5" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-food" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="12" r="6" fill="currentColor" fill-opacity=".18"/><circle cx="15" cy="12" r="2.6"/><path d="M3.5 3.5v5a2 2 0 0 0 4 0v-5M5.5 3.5V21"/></symbol><symbol id="i-dumbbell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="6.5" width="3.5" height="11" rx="1.2" fill="currentColor" fill-opacity=".18"/><rect x="16" y="6.5" width="3.5" height="11" rx="1.2" fill="currentColor" fill-opacity=".18"/><path d="M2.5 10v4M21.5 10v4M8 12h8"/></symbol><symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5" fill="currentColor" fill-opacity=".18"/><path d="M8 10.5a5.5 5.5 0 0 1 8 0"/><path d="M12 12.5l1.8-2.6"/></symbol><symbol id="i-more" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="6.5" height="6.5" rx="2" fill="currentColor" fill-opacity=".18"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="2"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="2"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="2" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-pulse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12h4l2.5-6.5 4.5 13 2.5-6.5h5.5"/></symbol><symbol id="i-fridge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2.5" width="14" height="19" rx="3" fill="currentColor" fill-opacity=".18"/><path d="M5 10h14M8.5 5.5v2M8.5 13v3.5"/></symbol><symbol id="i-report" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="4" width="15" height="17.5" rx="3" fill="currentColor" fill-opacity=".18"/><rect x="9" y="2.5" width="6" height="3.2" rx="1.2"/><path d="M8.5 17v-3M12 17v-6M15.5 17v-4"/></symbol><symbol id="i-sliders" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2.2"/><circle cx="9" cy="12" r="2.2"/><circle cx="17" cy="18" r="2.2"/></symbol><symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8s6.5 6.7 6.5 11.4a6.5 6.5 0 0 1-13 0C5.5 9.5 12 2.8 12 2.8z" fill="currentColor" fill-opacity=".18"/><path d="M9 14.5a3 3 0 0 0 3 3"/></symbol><symbol id="i-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5c-3.9 0-7-2.8-7-6.6 0-3.1 2-5.1 3.6-6.6.3 1.8 1.2 3 2.5 3.5-.1-3.3 1.4-6.3 3.9-8.3 0 3.6 4 5.6 4 11.4 0 3.8-3.1 6.6-7 6.6z" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 2.5L4.5 13.5H12l-1.5 8 9-11H12l1.5-8z" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3l1.9 5.1L18 10l-5.1 1.9L11 17l-1.9-5.1L4 10l5.1-1.9z" fill="currentColor" fill-opacity=".18"/><path d="M18.5 15.5v5M16 18h5"/></symbol><symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2" fill="currentColor" fill-opacity=".18"/><path d="M12 2v2.2M12 19.8V22M2 12h2.2M19.8 12H22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6"/></symbol><symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.6-.8 1.6-1.6 0-1.2-1-1.6-1-2.7 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z" fill="currentColor" fill-opacity=".18"/><circle cx="7.6" cy="11.5" r="1.1"/><circle cx="10" cy="7.4" r="1.1"/><circle cx="14.8" cy="7.4" r="1.1"/></symbol><symbol id="i-steps" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 16.5c0-2 1-3 2.5-3s3 1 3 3-1.2 3.5-3 3.5-2.5-1.5-2.5-3.5z" fill="currentColor" fill-opacity=".18"/><path d="M15 9.5c0-2 1-3 2.5-3s3 1 3 3-1.2 3.5-3 3.5-2.5-1.5-2.5-3.5z" fill="currentColor" fill-opacity=".18"/><path d="M5.5 10.5v-1M7.5 10v-1.5M17 3.5V2.5M19 3.5V2"/></symbol><symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" fill="currentColor" fill-opacity=".18"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5" fill="currentColor" fill-opacity=".18"/><path d="M2.5 20.5a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18.2 14.3a6.5 6.5 0 0 1 3.3 6.2"/></symbol><symbol id="i-save" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5"/><path d="M4 16.5v2a2.5 2.5 0 0 0 2.5 2.5h11a2.5 2.5 0 0 0 2.5-2.5v-2"/></symbol><symbol id="i-trend" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17.5l6-6 4 4 8-8"/><path d="M15 7.5h6v6"/></symbol><symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="4" height="9" rx="1.2" fill="currentColor" fill-opacity=".18"/><rect x="10" y="4" width="4" height="16" rx="1.2"/><rect x="16" y="14" width="4" height="6" rx="1.2" fill="currentColor" fill-opacity=".18"/></symbol><symbol id="i-list" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6.5h11M9 12h11M9 17.5h11"/><circle cx="4.5" cy="6.5" r="1.1"/><circle cx="4.5" cy="12" r="1.1"/><circle cx="4.5" cy="17.5" r="1.1"/></symbol><symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v16H7.5A2.5 2.5 0 0 0 5 20.5z" fill="currentColor" fill-opacity=".18"/><path d="M5 20.5A2.5 2.5 0 0 0 7.5 23H19v-5M9 6.5h6M9 10h4"/></symbol><symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5" fill="currentColor" fill-opacity=".18"/><circle cx="12" cy="12" r="1.4"/></symbol></defs></svg>
 
 <header>
   <div class="header-top">
@@ -237,7 +331,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
       <div class="avatar" id="chipAvatar">👤</div>
       <div class="info"><span class="pname" id="chipName">Основной</span><span class="pmeta" id="chipMeta">Профиль</span></div>
     </div>
-    <div class="header-controls"><button class="icon-btn" id="nightToggle">🌙</button></div>
+    <div class="header-controls"><button class="icon-btn" id="nightToggle" aria-label="Ночной режим"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg></button></div>
   </div>
   <h1 id="appTitle">Самоконтроль</h1>
   <p id="appSubtitle">—</p>
@@ -247,6 +341,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
   <button data-tab="dash" class="active">Обзор</button>
   <button data-tab="food">Питание</button>
   <button data-tab="activity">Активность</button>
+  <button data-tab="workout">Тренировка</button>
   <button data-tab="fridge">Холодильник</button>
   <button data-tab="weight">Вес</button>
   <button data-tab="report">Отчёт</button>
@@ -256,21 +351,43 @@ body.theme-night .modal-header h3{color:var(--tx)}
 <main>
 
 <section id="dash" class="active">
-  <div class="card">
-    <h2>👤 Данные профиля</h2>
-    <div class="grid c2">
-      <div><label>Пол</label><select id="p_sex"><option value="m">Мужской</option><option value="f">Женский</option></select></div>
-      <div><label>Цель</label><select id="p_goal"><option value="cut">🔥 Похудение</option><option value="maintain">⚖️ Поддержание</option><option value="bulk">💪 Набор</option></select></div>
-      <div><label>Возраст</label><input id="p_age" type="number" value="30"></div>
-      <div><label>Рост, см</label><input id="p_height" type="number" value="175"></div>
-      <div><label>Вес, кг</label><input id="p_weight" type="number" step="0.1" value="75"></div>
-      <div><label>% жира</label><input id="p_fat" type="number" step="0.1" value="22"></div>
-      <div style="grid-column:1/-1"><label>Активность</label><select id="p_act"><option value="1.375">1.375 — лёгкая</option><option value="1.55" selected>1.55 — средняя</option><option value="1.725">1.725 — высокая</option><option value="1.9">1.9 — очень высокая</option></select></div>
+  <div class="card backup-banner" id="backupBanner" hidden>
+    <div><b>💾 Сделайте резервную копию</b><span class="hint-line" id="backupText"></span></div>
+    <div class="bb-actions"><button class="btn small" onclick="exportData()">Скачать</button><button class="btn ghost small" onclick="snoozeBackup()">Позже</button></div>
+  </div>
+  <div class="card today-card">
+    <div class="today-head"><h2><svg class="ic" aria-hidden="true"><use href="#i-ring"/></svg>Сегодня</h2><span class="today-date" id="today_date"></span></div>
+    <div class="ring-row">
+      <div class="ring" id="kcalRing">
+        <svg viewBox="0 0 120 120"><circle class="ring-bg" cx="60" cy="60" r="52"/><circle class="ring-fg" id="ring_fg" cx="60" cy="60" r="52"/></svg>
+        <div class="ring-center"><div class="ring-num" id="ring_left">0</div><div class="ring-cap" id="ring_cap">ккал осталось</div></div>
+      </div>
+      <div class="ring-stats">
+        <div><span class="rs-label"><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg>Цель</span><span class="rs-val" id="rs_target">0</span></div>
+        <div><span class="rs-label"><svg class="ic" aria-hidden="true"><use href="#i-food"/></svg>Съедено</span><span class="rs-val" id="rs_eaten">0</span></div>
+        <div><span class="rs-label"><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg>Сожжено</span><span class="rs-val" id="rs_burned">0</span></div>
+        <div><span class="rs-label"><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg>Вода</span><span class="rs-val" id="rs_water">0 л</span></div>
+      </div>
     </div>
-    <div class="actions"><button class="btn" onclick="calcAll()">📊 Рассчитать</button></div>
+    <div class="macro-bars">
+      <div class="macro"><div class="m-top"><span>Белки</span><b id="today_prot">0 / 0</b></div><div class="progress"><div id="bar_prot"></div></div></div>
+      <div class="macro"><div class="m-top"><span>Жиры</span><b id="today_fat">0 / 0</b></div><div class="progress"><div id="bar_fat"></div></div></div>
+      <div class="macro"><div class="m-top"><span>Углеводы</span><b id="today_carb">0 / 0</b></div><div class="progress"><div id="bar_carb"></div></div></div>
+    </div>
+    <div class="quick-actions">
+      <button onclick="quickFood()"><span><svg class="ic" aria-hidden="true"><use href="#i-food"/></svg></span>Еда</button>
+      <button onclick="quickWorkout()"><span><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg></span>Спорт</button>
+      <button onclick="addWater(0.25)"><span><svg class="ic" aria-hidden="true"><use href="#i-drop"/></svg></span>+250 мл</button>
+      <button onclick="quickWeight()"><span><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></span>Вес</button>
+    </div>
+    <span id="today_kcal" hidden></span><div hidden><div class="progress"><div id="bar_kcal"></div></div></div>
+  </div>
+  <div class="card profile-link">
+    <div><b id="pl_summary">Профиль</b><span class="hint-line">Нормы считаются от этих данных</span></div>
+    <button class="btn ghost small" onclick="switchTab('settings');setTimeout(()=>document.getElementById('p_sex').scrollIntoView({behavior:'smooth',block:'center'}),50)">Изменить</button>
   </div>
   <div class="card">
-    <h2>📈 Показатели</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg>Показатели</h2>
     <div class="stat-big"><span class="name">ИМТ</span><span class="val" id="out_bmi">—</span></div>
     <div class="stat-big"><span class="name">Жировая масса</span><span class="val" id="out_fatmass">—</span></div>
     <div class="stat-big"><span class="name">Тощая масса</span><span class="val" id="out_lean">—</span></div>
@@ -279,7 +396,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
     <div class="stat-big"><span class="name" id="out_cut_label">Целевые калории</span><span class="val" id="out_cut">—</span></div>
   </div>
   <div class="card">
-    <h2>🧬 Цели по нутриентам</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-target"/></svg>Цели по нутриентам</h2>
     <div class="stat-big"><span class="name">🥩 Белок</span><span class="val" id="out_prot_norm">—</span></div>
     <div class="stat-big"><span class="name">🥑 Жиры</span><span class="val" id="out_fat_norm">—</span></div>
     <div class="stat-big"><span class="name">🍚 Углеводы</span><span class="val" id="out_carb_norm">—</span></div>
@@ -287,7 +404,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
     <div class="stat-big"><span class="name">💧 Вода</span><span class="val" id="out_water_norm">—</span></div>
   </div>
   <div class="card">
-    <h2>🔥 Сожжено сегодня</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg>Детали дня</h2>
     <div class="workout-summary">
       <div class="tile"><div class="label">Калории</div><div class="value" id="today_burned">0</div></div>
       <div class="tile"><div class="label">Минуты</div><div class="value" id="today_burned_min">0</div></div>
@@ -297,32 +414,12 @@ body.theme-night .modal-header h3{color:var(--tx)}
     <div class="stat-big"><span class="name">🍽 Съедено</span><span class="val" id="today_eaten">0</span></div>
     <div class="stat-big"><span class="name">⚖️ Баланс</span><span class="val" id="today_net">0</span></div>
   </div>
-  <div class="card">
-    <h2>🎯 Прогресс дня</h2>
-    <div class="grid c2">
-      <div class="prog-block"><div class="label">Калории</div><div class="value" id="today_kcal">0 / 0</div><div class="progress"><div id="bar_kcal"></div></div></div>
-      <div class="prog-block"><div class="label">Белки</div><div class="value" id="today_prot">0 / 0</div><div class="progress"><div id="bar_prot"></div></div></div>
-      <div class="prog-block"><div class="label">Жиры</div><div class="value" id="today_fat">0 / 0</div><div class="progress"><div id="bar_fat"></div></div></div>
-      <div class="prog-block"><div class="label">Углеводы</div><div class="value" id="today_carb">0 / 0</div><div class="progress"><div id="bar_carb"></div></div></div>
-    </div>
-  </div>
 </section>
 
 <section id="food">
   <div class="card">
-    <h2>🍽 Рацион на неделю</h2>
-    <p style="color:var(--pd);font-size:13px;margin:0 0 10px" id="menuNote"></p>
-    <div class="note info" style="margin:0">
-      🌙 Все углеводы — завтрак/обед, <b>ужин низкоуглеводный</b>. У каждого блюда — <b>рецепт</b>. Если отметили продукты в «Холодильнике» — можно пересобрать рацион.
-    </div>
-    <div class="actions" style="margin-top:10px">
-      <button class="btn ghost small" onclick="resetMenuOverrides()">↺ Сбросить изменения рациона</button>
-    </div>
-  </div>
-  <div id="menuContainer"></div>
-
-  <div class="card">
-    <h2>⚡ Быстрое добавление</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg>Быстрое добавление</h2>
+    <div id="recentWrap" style="display:none"><label>🕘 Недавние — в одно касание</label><div class="recent-chips" id="recentChips"></div></div>
     <div class="grid c2">
       <div><label>Дата</label><input type="date" id="q_date"></div>
       <div><label>Приём</label><select id="q_meal"><option>Завтрак</option><option>Обед</option><option>Ужин</option><option>Перекус</option><option>Перед сном</option></select></div>
@@ -339,9 +436,8 @@ body.theme-night .modal-header h3{color:var(--tx)}
       <div id="prod_preview" class="sport-note" style="display:none"></div>
     </div>
   </div>
-
   <div class="card">
-    <h2>📔 Дневник</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Дневник</h2>
     <div><label>Дата</label><input type="date" id="food_view_date" onchange="renderFood()"></div>
     <div class="list" id="food_list"></div>
     <div class="totals">
@@ -351,11 +447,25 @@ body.theme-night .modal-header h3{color:var(--tx)}
       <div class="tile"><div class="label">Углеводы</div><div class="value" id="t_carb">0</div></div>
     </div>
   </div>
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-food"/></svg>Рацион на неделю</h2>
+    <p style="color:var(--pd);font-size:13px;margin:0 0 10px" id="menuNote"></p>
+    <div class="note info" style="margin:0">
+      🌙 Все углеводы — завтрак/обед, <b>ужин низкоуглеводный</b>. У каждого блюда — <b>рецепт</b>. Если отметили продукты в «Холодильнике» — можно пересобрать рацион.
+    </div>
+    <div class="actions" style="margin-top:10px">
+      <button class="btn ghost small" onclick="resetMenuOverrides()">↺ Сбросить изменения рациона</button>
+    </div>
+  </div>
+  <div class="day-chips" id="menuDays"></div>
+  <div id="menuContainer"></div>
+
+
 </section>
 
 <section id="activity">
   <div class="card">
-    <h2>🏃 Тренировка</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg>Тренировка</h2>
     <div class="grid c2">
       <div><label>Дата</label><input type="date" id="wk_date"></div>
       <div><label>Тип</label><select id="wk_type"></select></div>
@@ -367,9 +477,64 @@ body.theme-night .modal-header h3{color:var(--tx)}
   </div>
 
   <div class="card">
-    <h2>💪 Библиотека упражнений</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-dumbbell"/></svg>Силовые и HIIT</h2>
+    <p style="color:var(--pd);font-size:13px;margin:0 0 10px">Библиотека упражнений и журнал силовых/HIIT-тренировок — в отдельном разделе. Все выполненные упражнения автоматически попадают в счётчик сожжённых калорий.</p>
+    <div class="actions"><button class="btn" onclick="switchTab('workout')">🏋️ Перейти к тренировкам</button></div>
+  </div>
+
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Калории за день</h2>
+    <div class="workout-summary">
+      <div class="tile"><div class="label">Сожжено</div><div class="value" id="day_burned">0</div></div>
+      <div class="tile"><div class="label">Минуты</div><div class="value" id="day_burned_min">0</div></div>
+    </div>
+    <div><label>Дата</label><input type="date" id="wk_view_date" onchange="renderWorkouts()"></div>
+    <div class="list" id="wk_list"></div>
+  </div>
+
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-steps"/></svg>Шаги, сон, вода</h2>
+    <div class="grid c2">
+      <div><label>Дата</label><input type="date" id="a_date"></div>
+      <div><label>Шаги</label><input type="number" id="a_steps" value="0" min="0"></div>
+      <div><label>Сон, ч</label><input type="number" id="a_sleep" step="0.1" value="7.5"></div>
+      <div><label>Вода, л</label><input type="number" id="a_water" step="0.1" value="2.0"></div>
+      <div style="grid-column:1/-1"><label>Самочувствие 1–10</label><input type="number" id="a_feel" value="7" min="1" max="10"></div>
+    </div>
+    <div class="sport-note" id="steps_kcal_preview" style="margin-top:10px;display:none"></div>
+    <div class="actions"><button class="btn" onclick="addActivity()">💾 Сохранить</button></div>
+  </div>
+
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg>Сводка 7 дней</h2>
+    <div class="grid c2">
+      <div class="stat-big"><span class="name">🔥 Сожжено всего</span><span class="val" id="s_burned">0</span></div>
+      <div class="stat-big"><span class="name">🏋️ Тренировки</span><span class="val" id="s_workout_kcal">0</span></div>
+      <div class="stat-big"><span class="name">🏃 Шаги → ккал</span><span class="val" id="s_steps_kcal">0</span></div>
+      <div class="stat-big"><span class="name">⏱ Минут тренировок</span><span class="val" id="s_minutes">0</span></div>
+      <div class="stat-big"><span class="name">👟 Шаги (сред.)</span><span class="val" id="s_steps">0</span></div>
+      <div class="stat-big"><span class="name">😴 Сон (сред.)</span><span class="val" id="s_sleep">0</span></div>
+      <div class="stat-big"><span class="name">💧 Вода (сред.)</span><span class="val" id="s_water">0</span></div>
+      <div class="stat-big"><span class="name">🙂 Сам.</span><span class="val" id="s_feel">0</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="workout">
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-flame"/></svg>Сожжено сегодня на тренировках</h2>
+    <div class="workout-summary">
+      <div class="tile"><div class="label">Калории</div><div class="value" id="wo_today_kcal">0</div></div>
+      <div class="tile"><div class="label">Минуты</div><div class="value" id="wo_today_min">0</div></div>
+    </div>
+    <div class="note info" style="margin:0">💡 Каждая записанная тренировка автоматически добавляется в «Сожжено сегодня» и в отчёт.</div>
+  </div>
+
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-dumbbell"/></svg>Библиотека упражнений</h2>
     <p style="color:var(--pd);font-size:12.5px;margin:0">Сегодня: <b id="ex_today_count">0</b> упр. · Тоннаж: <b id="ex_today_tonnage">0</b> · Сожжено: <b id="ex_today_kcal">0</b> ккал</p>
   </div>
+  <div class="ex-search"><input id="ex_search" type="search" placeholder="🔎 Найти упражнение: присед, жим, планка…" autocomplete="off"><span id="ex_found"></span></div>
   <div class="muscle-tabs" id="muscleTabs">
     <button data-muscle="all" class="active">Все</button>
     <button data-muscle="hiit">🔥 HIIT</button>
@@ -387,7 +552,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
   <div id="exerciseContainer"></div>
 
   <div class="card">
-    <h2>📋 Мои тренировки</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Мои тренировки</h2>
     <div><label>Дата</label><input type="date" id="ex_view_date" onchange="renderExerciseLog()"></div>
     <div class="list" id="ex_log_list"></div>
     <div class="workout-summary" style="margin-top:14px">
@@ -395,48 +560,11 @@ body.theme-night .modal-header h3{color:var(--tx)}
       <div class="tile"><div class="label">Упражнений</div><div class="value" id="ex_log_count">0</div></div>
     </div>
   </div>
-
-  <div class="card">
-    <h2>📋 Калории за день</h2>
-    <div class="workout-summary">
-      <div class="tile"><div class="label">Сожжено</div><div class="value" id="day_burned">0</div></div>
-      <div class="tile"><div class="label">Минуты</div><div class="value" id="day_burned_min">0</div></div>
-    </div>
-    <div><label>Дата</label><input type="date" id="wk_view_date" onchange="renderWorkouts()"></div>
-    <div class="list" id="wk_list"></div>
-  </div>
-
-  <div class="card">
-    <h2>👟 Шаги, сон, вода</h2>
-    <div class="grid c2">
-      <div><label>Дата</label><input type="date" id="a_date"></div>
-      <div><label>Шаги</label><input type="number" id="a_steps" value="0" min="0"></div>
-      <div><label>Сон, ч</label><input type="number" id="a_sleep" step="0.1" value="7.5"></div>
-      <div><label>Вода, л</label><input type="number" id="a_water" step="0.1" value="2.0"></div>
-      <div style="grid-column:1/-1"><label>Самочувствие 1–10</label><input type="number" id="a_feel" value="7" min="1" max="10"></div>
-    </div>
-    <div class="sport-note" id="steps_kcal_preview" style="margin-top:10px;display:none"></div>
-    <div class="actions"><button class="btn" onclick="addActivity()">💾 Сохранить</button></div>
-  </div>
-
-  <div class="card">
-    <h2>📊 Сводка 7 дней</h2>
-    <div class="grid c2">
-      <div class="stat-big"><span class="name">🔥 Сожжено всего</span><span class="val" id="s_burned">0</span></div>
-      <div class="stat-big"><span class="name">🏋️ Тренировки</span><span class="val" id="s_workout_kcal">0</span></div>
-      <div class="stat-big"><span class="name">🏃 Шаги → ккал</span><span class="val" id="s_steps_kcal">0</span></div>
-      <div class="stat-big"><span class="name">⏱ Минут тренировок</span><span class="val" id="s_minutes">0</span></div>
-      <div class="stat-big"><span class="name">👟 Шаги (сред.)</span><span class="val" id="s_steps">0</span></div>
-      <div class="stat-big"><span class="name">😴 Сон (сред.)</span><span class="val" id="s_sleep">0</span></div>
-      <div class="stat-big"><span class="name">💧 Вода (сред.)</span><span class="val" id="s_water">0</span></div>
-      <div class="stat-big"><span class="name">🙂 Сам.</span><span class="val" id="s_feel">0</span></div>
-    </div>
-  </div>
 </section>
 
 <section id="fridge">
   <div class="card">
-    <h2>🧊 Холодильник-микс</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-fridge"/></svg>Холодильник-микс</h2>
     <p style="color:var(--pd);font-size:13px;margin:0 0 10px">
       Отметьте продукты, которые у вас есть. Приложение пересоберёт недельный рацион: заменит отсутствующие продукты на аналогичные из холодильника, сохраняя суточное КБЖУ.
     </p>
@@ -448,24 +576,26 @@ body.theme-night .modal-header h3{color:var(--tx)}
     </div>
   </div>
   <div class="card" id="fridgeResultCard" style="display:none">
-    <h2>✨ Результат пересборки</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-sparkle"/></svg>Результат пересборки</h2>
     <div id="fridgeResult"></div>
   </div>
 </section>
 
 <section id="weight">
   <div class="card">
-    <h2>⚖️ Взвешивание</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg>Взвешивание</h2>
     <div class="grid c2">
       <div><label>Дата</label><input type="date" id="wd_date"></div>
       <div><label>Вес, кг</label><input type="number" id="wd_weight" step="0.1"></div>
       <div><label>Живот, см</label><input type="number" id="wd_waist" step="0.1"></div>
       <div><label>% жира</label><input type="number" id="wd_fat" step="0.1"></div>
+      <div style="grid-column:1/-1"><label>🎯 Целевой вес, кг</label><input type="number" id="wd_goal" step="0.1" placeholder="например, 70" onchange="setGoalWeight(this.value)"></div>
       <div style="display:flex;align-items:flex-end;grid-column:1/-1"><button class="btn" onclick="addWeight()">💾 Сохранить</button></div>
     </div>
   </div>
   <div class="card">
-    <h2>📈 Динамика</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-trend"/></svg>Динамика</h2>
+    <div class="w-stats" id="w_stats"></div>
     <div class="chart-wrap"><canvas id="wchart" class="chart"></canvas></div>
     <div class="list" id="w_list"></div>
   </div>
@@ -473,7 +603,7 @@ body.theme-night .modal-header h3{color:var(--tx)}
 
 <section id="report">
   <div class="card">
-    <h2>📊 Отчёт</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg>Отчёт</h2>
     <div class="date-range-row">
       <div><label>С</label><input type="date" id="rep_from"></div>
       <div><label>По</label><input type="date" id="rep_to"></div>
@@ -486,11 +616,26 @@ body.theme-night .modal-header h3{color:var(--tx)}
 
 <section id="settings">
   <div class="card">
-    <h2>🎨 Цветовая палитра</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg>Данные профиля</h2>
+    <p class="hint-line">От этих данных считаются нормы калорий и БЖУ на экране «Обзор».</p>
+    <div class="grid c2">
+      <div><label>Пол</label><select id="p_sex"><option value="m">Мужской</option><option value="f">Женский</option></select></div>
+      <div><label>Цель</label><select id="p_goal"><option value="cut">🔥 Похудение</option><option value="maintain">⚖️ Поддержание</option><option value="bulk">💪 Набор</option></select></div>
+      <div><label>Возраст</label><input id="p_age" type="number" value="30"></div>
+      <div><label>Рост, см</label><input id="p_height" type="number" value="175"></div>
+      <div><label>Вес, кг</label><input id="p_weight" type="number" step="0.1" value="75"></div>
+      <div><label>% жира</label><input id="p_fat" type="number" step="0.1" value="22"></div>
+      <div style="grid-column:1/-1"><label>Активность</label><select id="p_act"><option value="1.375">1.375 — лёгкая</option><option value="1.55" selected>1.55 — средняя</option><option value="1.725">1.725 — высокая</option><option value="1.9">1.9 — очень высокая</option></select></div>
+    </div>
+    <div class="actions"><button class="btn" onclick="if(calcAll()!==false)showToast('✅ Нормы пересчитаны')">📊 Рассчитать</button></div>
+  </div>
+  <div class="card">
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg>Цветовая палитра</h2>
+    <p class="hint-line">Темы с меткой «2026» собраны по цветам года: Cloud Dancer (Pantone), Transformative Teal и ключевые цвета WGSN × Coloro.</p>
     <div class="palette-grid" id="paletteGrid"></div>
   </div>
   <div class="card">
-    <h2>🌙 Ночной режим</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg>Ночной режим</h2>
     <div class="grid c3">
       <div><label>Режим</label><select id="nightMode"><option value="auto">🌗 Авто</option><option value="on">🌙 Вкл</option><option value="off">☀️ Выкл</option></select></div>
       <div><label>Начало</label><input type="number" id="nightStart" min="0" max="23" value="19"></div>
@@ -498,11 +643,12 @@ body.theme-night .modal-header h3{color:var(--tx)}
     </div>
   </div>
   <div class="card">
-    <h2>👥 Профили</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Профили</h2>
     <div class="actions"><button class="btn" onclick="openProfileManager()">👥 Управление профилями</button></div>
   </div>
   <div class="card">
-    <h2>💾 Данные</h2>
+    <h2><svg class="ic" aria-hidden="true"><use href="#i-save"/></svg>Данные</h2>
+    <p class="hint-line" id="backupInfo"></p>
     <div class="actions">
       <button class="btn" onclick="exportData()">📤 Скачать JSON</button>
       <button class="btn secondary" onclick="document.getElementById('importFile').click()">📥 Загрузить</button>
@@ -515,14 +661,25 @@ body.theme-night .modal-header h3{color:var(--tx)}
 </main>
 
 <nav class="bottom-nav" id="bottomNav">
-  <button data-tab="dash" class="active"><span class="ico">📊</span>Обзор</button>
-  <button data-tab="food"><span class="ico">🍽️</span>Питание</button>
-  <button data-tab="activity"><span class="ico">🏃</span>Активн.</button>
-  <button data-tab="fridge"><span class="ico">🧊</span>Холод.</button>
-  <button data-tab="weight"><span class="ico">⚖️</span>Вес</button>
-  <button data-tab="report"><span class="ico">📋</span>Отчёт</button>
-  <button data-tab="settings"><span class="ico">⚙️</span>Настр.</button>
+  <button data-tab="dash" class="active"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-ring"/></svg></span>Обзор</button>
+  <button data-tab="food"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-food"/></svg></span>Питание</button>
+  <button data-tab="workout"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-dumbbell"/></svg></span>Тренировки</button>
+  <button data-tab="weight"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg></span>Вес</button>
+  <button id="moreBtn" onclick="openMoreMenu()"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-more"/></svg></span>Ещё</button>
 </nav>
+
+<div class="modal-overlay" id="moreModal" onclick="if(event.target===this)closeMoreMenu()">
+  <div class="modal">
+    <div class="modal-grab"></div>
+    <div class="modal-header"><h3>Разделы</h3><button class="modal-close" onclick="closeMoreMenu()">✕</button></div>
+    <div class="modal-body more-list">
+      <button data-more="activity" onclick="openFromMore('activity')"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-pulse"/></svg></span>Активность<small>шаги, сон, вода, кардио</small></button>
+      <button data-more="fridge" onclick="openFromMore('fridge')"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-fridge"/></svg></span>Холодильник<small>пересобрать рацион из того, что есть</small></button>
+      <button data-more="report" onclick="openFromMore('report')"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-report"/></svg></span>Отчёт<small>сводка за период</small></button>
+      <button data-more="settings" onclick="openFromMore('settings')"><span class="ico"><svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg></span>Настройки<small>тема, профили, резервная копия</small></button>
+    </div>
+  </div>
+</div>
 
 <div class="modal-overlay" id="profileModal" onclick="if(event.target===this)closeProfileManager()">
   <div class="modal">
@@ -937,13 +1094,19 @@ const THEMES=[
   {id:"orange",name:"Тыква",colors:["#ea580c","#9a3412","#fb923c"]},
   {id:"ocean",name:"Океан",colors:["#0891b2","#155e75","#22d3ee"]},
   {id:"forest",name:"Лес",colors:["#16a34a","#14532d","#4ade80"]},
-  {id:"sakura",name:"Сакура",colors:["#ec4899","#9d174d","#f9a8d4"]}
+  {id:"sakura",name:"Сакура",colors:["#ec4899","#9d174d","#f9a8d4"]},
+  {id:"cloud",name:"Облачный",colors:["#6f5e53","#4a3d35","#b9aa9d"],trend:"Pantone 2026"},
+  {id:"teal",name:"Бирюза",colors:["#0f6e6e","#0a4a4a","#4fb3aa"],trend:"WGSN 2026"},
+  {id:"fuchsia",name:"Фуксия",colors:["#c2187a","#86104f","#f06ab4"],trend:"2026"},
+  {id:"aura",name:"Голубая аура",colors:["#4a6fa5","#2f4a73","#a9bfe0"],trend:"2026"},
+  {id:"amber",name:"Янтарь",colors:["#9a5b16","#6e3f0c","#e3a857"],trend:"2026"},
+  {id:"mint",name:"Мята",colors:["#137a60","#0d5a46","#8fdcbc"],trend:"2026"}
 ];
-const THEME_CLASSES=["theme-emerald","theme-purple","theme-orange","theme-ocean","theme-forest","theme-sakura"];
+const THEME_CLASSES=THEMES.filter(t=>t.id!=="default").map(t=>"theme-"+t.id);
 function applyColorTheme(){const t=state.colorTheme||"default";THEME_CLASSES.forEach(c=>document.body.classList.remove(c));if(t!=="default")document.body.classList.add("theme-"+t);renderPalette();const meta=document.getElementById("metaTheme");if(meta){const p=getComputedStyle(document.body).getPropertyValue('--p').trim();if(p)meta.content=p;}}
-function renderPalette(){const grid=document.getElementById("paletteGrid");if(!grid)return;const cur=state.colorTheme||"default";grid.innerHTML=THEMES.map(t=>`<div class="palette-item ${cur===t.id?'active':''}" onclick="setColorTheme('${t.id}')"><div class="palette-dots">${t.colors.map(c=>`<div class="dot" style="background:${c}"></div>`).join("")}</div><div class="palette-name">${t.name}</div></div>`).join("");}
+function renderPalette(){const grid=document.getElementById("paletteGrid");if(!grid)return;const cur=state.colorTheme||"default";grid.innerHTML=THEMES.map(t=>`<div class="palette-item ${cur===t.id?'active':''}" onclick="setColorTheme('${t.id}')"><div class="palette-dots">${t.colors.map(c=>`<div class="dot" style="background:${c}"></div>`).join("")}</div><div class="palette-name">${t.name}</div>${t.trend?`<div class="palette-tag">${t.trend}</div>`:""}</div>`).join("");}
 function setColorTheme(id){state.colorTheme=id;save();applyColorTheme();showToast("Тема: "+(THEMES.find(t=>t.id===id)?.name||id));}
-function applyNightMode(){const m=state.nightMode||"auto";let isN=false;if(m==="on")isN=true;else if(m==="off")isN=false;else{const h=new Date().getHours();const s=Number(state.nightStart??19);const e=Number(state.nightEnd??7);isN=(s>e)?(h>=s||h<e):(h>=s&&h<e);}document.body.classList.toggle("theme-night",isN);const btn=document.getElementById("nightToggle");if(btn)btn.textContent=isN?"☀️":"🌙";setTimeout(drawChart,50);}
+function applyNightMode(){const m=state.nightMode||"auto";let isN=false;if(m==="on")isN=true;else if(m==="off")isN=false;else{const h=new Date().getHours();const s=Number(state.nightStart??19);const e=Number(state.nightEnd??7);isN=(s>e)?(h>=s||h<e):(h>=s&&h<e);}document.body.classList.toggle("theme-night",isN);const btn=document.getElementById("nightToggle");if(btn)btn.innerHTML=`<svg class="ic" aria-hidden="true"><use href="#i-${isN?"sun":"moon"}"/></svg>`;setTimeout(drawChart,50);}
 document.getElementById("nightToggle").addEventListener("click",()=>{const c=state.nightMode||"auto";const n=c==="auto"?"on":c==="on"?"off":"auto";state.nightMode=n;save();const el=document.getElementById("nightMode");if(el)el.value=n;applyNightMode();showToast(n==="auto"?"🌗 Авто":n==="on"?"🌙 Вкл":"☀️ Выкл");});
 setInterval(()=>{if((state.nightMode||"auto")==="auto")applyNightMode();},60000);
 function applyTheme(){updateSubtitle();applyColorTheme();applyNightMode();}
@@ -980,10 +1143,15 @@ function renderMenu(){
   const c=document.getElementById("menuContainer");c.innerHTML="";
   const menu=getCurrentMenu();
   document.getElementById("menuNote").textContent=getMenuLabel();
+  const todayIdx=(new Date().getDay()+6)%7;
+  if(window._menuDay==null)window._menuDay=Math.min(todayIdx,menu.length-1);
+  const SHORT=["Пн","Вт","Ср","Чт","Пт","Сб","Вс"];
+  const chips=document.getElementById("menuDays");
+  if(chips)chips.innerHTML=menu.map((day,i)=>`<button class="${i===window._menuDay?"active":""} ${i===todayIdx?"today":""}" onclick="window._menuDay=${i};renderMenu()" title="${escapeHtml(day.day)}">${SHORT[i]||i+1}</button>`).join("");
   menu.forEach((day,idx)=>{
     let dK=0,dP=0,dF=0,dC=0;
     Object.keys(day.meals).forEach(m=>{const kb=mealKBJU(day.meals[m]);dK+=kb.kcal;dP+=kb.prot;dF+=kb.fat;dC+=kb.carb;});
-    const d=document.createElement("details");d.className="menu-day";if(idx===0)d.open=true;
+    const d=document.createElement("details");d.className="menu-day";d.open=true;d.hidden=idx!==window._menuDay;
     const mh=Object.keys(day.meals).map(m=>{
       const mealObj=day.meals[m];
       const kb=mealKBJU(mealObj);
@@ -1008,7 +1176,7 @@ function renderMenu(){
 function loadMenuIntoFood(idx){
   const menu=getCurrentMenu();const day=menu[idx];if(!day)return;
   const date=document.getElementById("food_view_date").value||todayISO();
-  if(!confirm(`Загрузить рацион «${day.day}» на ${fmtDate(date)}?`))return;
+  const had=food.some(x=>x.date===date);if(!confirm(`Загрузить рацион «${day.day}» на ${fmtDate(date)}?`+(had?"\n\nЗаписи дневника за этот день будут заменены.":"")))return;
   food=food.filter(x=>x.date!==date);
   Object.keys(day.meals).forEach(m=>{day.meals[m].dishes.forEach(dish=>{dish.foods.forEach(([name,qty])=>{const p=PRODUCTS[name];if(!p)return;const f=qty/100;food.push({id:Date.now()+Math.random(),date,meal:m,name,qty,kcal:p.k*f,prot:p.p*f,fat:p.f*f,carb:p.c*f,gi:p.gi});});});});
   save();renderFood();renderDash();showToast("Загружено");
@@ -1158,7 +1326,21 @@ function rebuildMenuFromFridge(){
   showToast(`Готово · ${totalSubs} замен в ${Object.keys(newOverrides).length} блюдах`);
 }
 
+function renderRecent(){
+  const wrap=document.getElementById("recentWrap"),box=document.getElementById("recentChips");if(!wrap||!box)return;
+  const seen=new Map();[...food].sort((a,b)=>(b.date.localeCompare(a.date))||((b.id||0)-(a.id||0))).forEach(r=>{if(!seen.has(r.name)&&PRODUCTS[r.name])seen.set(r.name,Math.round(r.qty));});
+  const items=[...seen].slice(0,8);wrap.style.display=items.length?"":"none";
+  box.innerHTML=items.map(([n,q],i)=>`<button type="button" data-i="${i}">${escapeHtml(n)}<small>${q} г</small></button>`).join("");
+  box.querySelectorAll("button").forEach(b=>b.onclick=()=>{const[n,q]=items[+b.dataset.i];addFoodEntry(n,q);});
+}
+function addFoodEntry(name,qty){
+  const p=PRODUCTS[name];if(!p)return;
+  const date=document.getElementById("q_date").value||todayISO();const meal=document.getElementById("q_meal").value;const f=qty/100;
+  food.push({id:Date.now()+Math.random(),date,meal,name,qty,kcal:p.k*f,prot:p.p*f,fat:p.f*f,carb:p.c*f,gi:p.gi});
+  save();renderFood();renderDash();showToast(`+${name} ${qty} г · ${meal}`);
+}
 function renderFood(){
+  renderRecent();
   const d=document.getElementById("food_view_date").value||todayISO();
   const rows=food.filter(x=>x.date===d);
   const list=document.getElementById("food_list");list.innerHTML="";
@@ -1221,11 +1403,8 @@ function onProductPick(name){
 function onProductSelect(v){if(!v)return;document.getElementById("prod_search").value=v;onProductPick(v);}
 function addProductFromSearch(){
   const name=window._selectedProduct;if(!name){showToast("Выберите продукт");return;}
-  const qty=Number(document.getElementById("prod_qty").value)||0;if(qty<=0)return;
-  const date=document.getElementById("q_date").value||todayISO();const meal=document.getElementById("q_meal").value;
-  const p=PRODUCTS[name];const f=qty/100;
-  food.push({id:Date.now()+Math.random(),date,meal,name,qty,kcal:p.k*f,prot:p.p*f,fat:p.f*f,carb:p.c*f,gi:p.gi});
-  save();renderFood();renderDash();showToast(`+${name}`);
+  const qtyEl=document.getElementById("prod_qty");const qty=Number(qtyEl.value)||0;qtyEl.classList.toggle("invalid",qty<=0||qty>5000);if(qty<=0||qty>5000){showToast("Укажите количество от 1 до 5000 г");return;}
+  addFoodEntry(name,qty);
 }
 
 let currentMuscle="all";
@@ -1235,6 +1414,14 @@ function filterMuscle(m){
   document.querySelectorAll("#muscleTabs button").forEach(b=>b.classList.toggle("active",b.dataset.muscle===m));
   renderExerciseLibrary();
 }
+function filterExercises(){
+  const inp=document.getElementById("ex_search");const q=(inp?inp.value:"").trim().toLowerCase();
+  const cards=[...document.querySelectorAll("#exerciseContainer .ex-card")];let n=0;
+  cards.forEach(d=>{const ok=!q||q.split(/\s+/).every(w=>d.dataset.search.includes(w));d.hidden=!ok;if(ok)n++;});
+  const f=document.getElementById("ex_found");if(f)f.textContent=q?`Найдено: ${n}`:`${cards.length} упр.`;
+  const c=document.getElementById("exerciseContainer");let em=c.querySelector(".ex-none");
+  if(!n&&cards.length){if(!em){em=document.createElement("div");em.className="card ex-none";em.innerHTML='<div class="empty">Ничего не найдено. Попробуйте другое слово или вкладку «Все».</div>';c.appendChild(em);}}else if(em)em.remove();
+}
 function renderExerciseLibrary(){
   const c=document.getElementById("exerciseContainer");c.innerHTML="";
   const list=currentMuscle==="all"?getAllExercises():getAllExercises().filter(e=>e.muscle===currentMuscle);
@@ -1242,7 +1429,7 @@ function renderExerciseLibrary(){
   list.forEach(e=>{
     const gi=getAllExercises().indexOf(e);
     const isHiit = e.muscle === "hiit";
-    const d=document.createElement("details");d.className="ex-card";
+    const d=document.createElement("details");d.className="ex-card";d.dataset.search=(e.name+" "+(e.desc||"")+" "+(e.equipment||"")+" "+(MUSCLES[e.muscle]||"")).toLowerCase();
     const stepsHtml=e.steps?`<div class="ex-steps"><b>Техника:</b><ol>${e.steps.map(s=>`<li>${escapeHtml(s)}</li>`).join("")}</ol></div>`:"";
     let setsHeaderHtml, setRowsHtml, addBtnLabel;
     if(isHiit){
@@ -1257,6 +1444,7 @@ function renderExerciseLibrary(){
     d.innerHTML=`<summary><span>${escapeHtml(e.name)}</span><span class="ex-meta">${MUSCLES[e.muscle]} · ${escapeHtml(e.equipment||"—")}</span></summary><div class="ex-body"><div class="ex-desc">${escapeHtml(e.desc||"")}</div>${e.tip?`<div class="ex-tip">💡 ${escapeHtml(e.tip)}</div>`:""}${stepsHtml}<div class="edit-title" style="margin-bottom:6px">${isHiit?"🔥 Раунды HIIT":"📝 Подходы (можно разные веса)"}</div>${setsHeaderHtml}<div class="sets-container" data-ex-idx="${gi}" data-is-hiit="${isHiit?1:0}">${setRowsHtml}</div><button type="button" class="btn-add-set" data-ex-idx="${gi}">${addBtnLabel}</button><div class="set-summary" id="summary_${gi}">Итого: <b>0</b></div><button class="btn success" onclick="logMultiSetExercise(${gi})">✅ Записать тренировку</button></div>`;
     c.appendChild(d);
   });
+  filterExercises();
   c.querySelectorAll(".sets-container").forEach(cont=>{
     cont.addEventListener("input",()=>updateExSummary(Number(cont.dataset.exIdx)));
     cont.addEventListener("click",e=>{const delBtn=e.target.closest(".del-set");if(delBtn){delBtn.closest(".set-row").remove();renumberSets(cont);updateExSummary(Number(cont.dataset.exIdx));}});
@@ -1319,7 +1507,7 @@ function logMultiSetExercise(gi){
     const exId=Date.now()+Math.random();
     exerciseLog.push({id:exId,date,name:ex.name,muscle:"hiit",isHiit:true,rounds:roundTimes.length,roundTimes,totalTime,tonnage:totalTime});
     workouts.push({id:Date.now()+Math.random(),date,typeKey:"hiit",typeName:`🔥 ${ex.name}`,met,minutes:min,weight:getWeight(),kcal,sourceExId:exId});
-    save();renderExerciseLog();updateExTodayStats();renderDash();
+    save();renderExerciseLog();updateExTodayStats();updateWorkoutTodayStats();renderDash();renderActivity();
     showToast(`🔥 ${roundTimes.length} раундов · ${totalTime} сек · ${kcal} ккал`);
     return;
   }
@@ -1338,7 +1526,7 @@ function logMultiSetExercise(gi){
   const met=maxW>0?5.0:3.5;
   const kcal=calcBurn(met,min,getWeight());
   workouts.push({id:Date.now()+Math.random(),date,typeKey:"strength_ex",typeName:`🏋️ ${ex.name}`,met,minutes:min,weight:getWeight(),kcal,sourceExId:exId});
-  save();renderExerciseLog();updateExTodayStats();renderDash();
+  save();renderExerciseLog();updateExTodayStats();updateWorkoutTodayStats();renderDash();renderActivity();
   showToast(`✅ ${setsArr.length}×${totalReps} повт. · ${tonnage} кг · ${kcal} ккал`);
 }
 function updateExTodayStats(){
@@ -1350,10 +1538,18 @@ function updateExTodayStats(){
   const el2=document.getElementById("ex_today_tonnage");if(el2)el2.textContent=ton;
   const el3=document.getElementById("ex_today_kcal");if(el3)el3.textContent=kcal;
 }
+function updateWorkoutTodayStats(){
+  const today=todayISO();
+  const rows=workouts.filter(w=>w.date===today);
+  const kcal=rows.reduce((s,w)=>s+w.kcal,0);
+  const min=rows.reduce((s,w)=>s+w.minutes,0);
+  const el1=document.getElementById("wo_today_kcal");if(el1)el1.textContent=kcal;
+  const el2=document.getElementById("wo_today_min");if(el2)el2.textContent=min;
+}
 function renderExerciseLog(){
   const d=document.getElementById("ex_view_date").value||todayISO();
   const rows=exerciseLog.filter(x=>x.date===d).sort((a,b)=>a.id-b.id);
-  const list=document.getElementById("ex_log_list");list.innerHTML="";let tot=0;
+  const list=document.getElementById("ex_log_list");if(!list)return;list.innerHTML="";let tot=0;
   if(!rows.length)list.innerHTML='<div class="empty">Нет упражнений</div>';
   else rows.forEach(r=>{
     tot+=r.tonnage||0;
@@ -1370,7 +1566,7 @@ function renderExerciseLog(){
   const el1=document.getElementById("ex_log_tonnage");if(el1)el1.textContent=tot;
   const el2=document.getElementById("ex_log_count");if(el2)el2.textContent=rows.length;
 }
-function removeExerciseLog(id){exerciseLog=exerciseLog.filter(x=>x.id!==id);workouts=workouts.filter(w=>w.sourceExId!==id);save();renderExerciseLog();updateExTodayStats();renderDash();}
+function removeExerciseLog(id){exerciseLog=exerciseLog.filter(x=>x.id!==id);workouts=workouts.filter(w=>w.sourceExId!==id);save();renderExerciseLog();updateExTodayStats();updateWorkoutTodayStats();renderDash();renderActivity();renderWorkouts();}
 
 function initWorkoutSelect(){const sel=document.getElementById("wk_type");if(!sel)return;sel.innerHTML="";Object.keys(WORKOUT_TYPES).forEach(k=>{const o=document.createElement("option");o.value=k;o.textContent=WORKOUT_TYPES[k].name;sel.appendChild(o);});sel.value="walk_fast";}
 function updateWorkoutPreview(){const k=document.getElementById("wk_type")?.value;const wt=WORKOUT_TYPES[k];const m=Number(document.getElementById("wk_minutes")?.value)||0;const met=wt?wt.met:0;const mEl=document.getElementById("wk_met");if(mEl)mEl.value=met;const pEl=document.getElementById("wk_preview");if(pEl)pEl.textContent=`${calcBurn(met,m,getWeight())} ккал`;}
@@ -1382,17 +1578,21 @@ function addWorkout(){
   const wt=WORKOUT_TYPES[key];if(!wt)return;
   const w=getWeight();const kcal=calcBurn(wt.met,m,w);
   workouts.push({id:Date.now()+Math.random(),date,typeKey:key,typeName:wt.name,met:wt.met,minutes:m,weight:w,kcal});
-  save();renderWorkouts();renderActivity();renderDash();showToast(`🔥 +${kcal} ккал`);
+  save();renderWorkouts();renderActivity();updateWorkoutTodayStats();renderDash();showToast(`🔥 +${kcal} ккал`);
 }
-function removeWorkout(id){workouts=workouts.filter(x=>x.id!==id);save();renderWorkouts();renderActivity();renderDash();}
+function removeWorkout(id){workouts=workouts.filter(x=>x.id!==id);save();renderWorkouts();renderActivity();updateWorkoutTodayStats();renderDash();}
 function renderWorkouts(){
   const d=document.getElementById("wk_view_date")?.value||todayISO();
-  const rows=workouts.filter(w=>w.date===d&&!w.sourceExId).sort((a,b)=>a.id-b.id);
+  const allRows=workouts.filter(w=>w.date===d);
+  const rows=allRows.filter(w=>!w.sourceExId).sort((a,b)=>a.id-b.id);
   const list=document.getElementById("wk_list");if(!list)return;
-  list.innerHTML="";let tk=0,tm=0;
-  if(!rows.length)list.innerHTML='<div class="empty">Нет тренировок</div>';
-  else rows.forEach(w=>{
-    tk+=w.kcal;tm+=w.minutes;
+  list.innerHTML="";
+  const tk=allRows.reduce((s,w)=>s+w.kcal,0);
+  const tm=allRows.reduce((s,w)=>s+w.minutes,0);
+  if(!rows.length){
+    const exCount=allRows.length;
+    list.innerHTML=exCount?`<div class="empty">Только силовые/HIIT (${exCount} шт.) — они в разделе «Тренировка»</div>`:'<div class="empty">Нет тренировок</div>';
+  } else rows.forEach(w=>{
     const item=document.createElement("div");item.className="list-item";
     item.innerHTML=`<div class="row1"><span class="name">${escapeHtml(w.typeName)}</span><span class="kcal-big">${w.kcal} ккал</span></div><div class="macros"><span>⏱ <b>${w.minutes}</b> мин</span><span>MET <b>${w.met}</b></span></div><button class="rm" onclick="removeWorkout(${w.id})">✕</button>`;
     list.appendChild(item);
@@ -1429,10 +1629,37 @@ function renderActivity(){
   set("s_feel",num(avg("feel"),1));
 }
 
-function addWeight(){const date=document.getElementById("wd_date").value||todayISO();const w=Number(document.getElementById("wd_weight").value)||0;if(w<=0||w>500){showToast("Введите корректный вес");return;}const rec={date,weight:w,waist:Number(document.getElementById("wd_waist").value)||0,fat:Number(document.getElementById("wd_fat").value)||0};const i=weightLog.findIndex(x=>x.date===date);if(i>=0)weightLog[i]=rec;else weightLog.push(rec);weightLog.sort((a,b)=>a.date.localeCompare(b.date));save();renderWeight();drawChart();if(date>=(weightLog[weightLog.length-1]?.date||"")){document.getElementById("p_weight").value=w;if(rec.fat>0)document.getElementById("p_fat").value=rec.fat;calcAll();}showToast("Сохранено");}
+function addWeight(){const date=document.getElementById("wd_date").value||todayISO();const w=Number(document.getElementById("wd_weight").value)||0;document.getElementById("wd_weight").classList.toggle("invalid",w<=0||w>500);if(w<=0||w>500){showToast("Введите вес от 1 до 500 кг");return;}const rec={date,weight:w,waist:Number(document.getElementById("wd_waist").value)||0,fat:Number(document.getElementById("wd_fat").value)||0};const i=weightLog.findIndex(x=>x.date===date);if(i>=0)weightLog[i]=rec;else weightLog.push(rec);weightLog.sort((a,b)=>a.date.localeCompare(b.date));save();renderWeight();drawChart();renderWeightStats();if(date>=(weightLog[weightLog.length-1]?.date||"")){document.getElementById("p_weight").value=w;if(rec.fat>0)document.getElementById("p_fat").value=rec.fat;calcAll();}showToast("Сохранено");}
 function renderWeight(){const rows=[...weightLog].sort((a,b)=>b.date.localeCompare(a.date));const list=document.getElementById("w_list");if(!list)return;list.innerHTML="";const h=profileData.height||175;if(!rows.length)list.innerHTML='<div class="empty">Нет</div>';else rows.forEach(r=>{const imt=r.weight/((h/100)**2);const item=document.createElement("div");item.className="list-item";item.innerHTML=`<div class="row1"><span class="name">${fmtDate(r.date)}</span><span class="kcal-big">${num(r.weight,1)} кг</span></div><div class="macros"><span>ИМТ <b>${num(imt,1)}</b></span></div><button class="rm" onclick="removeWeight('${r.date}')">✕</button>`;list.appendChild(item);});}
-function removeWeight(date){weightLog=weightLog.filter(x=>x.date!==date);save();renderWeight();drawChart();}
-function drawChart(){const cv=document.getElementById("wchart");if(!cv)return;const cs=getComputedStyle(document.body);const cP=cs.getPropertyValue('--p').trim()||"#2980b9";const cPl=cs.getPropertyValue('--pl').trim()||"#5dade2";const cBd=cs.getPropertyValue('--bd').trim()||"#d6e3ec";const dpr=window.devicePixelRatio||1;const r=cv.parentElement.getBoundingClientRect();const W=r.width,H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.width=W+"px";cv.style.height=H+"px";const ctx=cv.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);const sorted=[...weightLog].sort((a,b)=>a.date.localeCompare(b.date));if(sorted.length<2){ctx.fillStyle="#94a3b8";ctx.font="13px -apple-system";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("Нужны 2 записи",W/2,H/2);return;}const pL=42,pR=12,pT=14,pB=28;const cw=W-pL-pR,ch=H-pT-pB;const ws=sorted.map(x=>x.weight);const mn=Math.min(...ws)-1,mx=Math.max(...ws)+1;const X=i=>pL+(i/(sorted.length-1))*cw;const Y=w=>pT+(1-(w-mn)/(mx-mn))*ch;ctx.strokeStyle=cBd;ctx.lineWidth=1;for(let i=0;i<=4;i++){const yy=pT+(ch/4)*i;ctx.beginPath();ctx.moveTo(pL,yy);ctx.lineTo(pL+cw,yy);ctx.stroke();ctx.fillStyle="#94a3b8";ctx.font="11px -apple-system";ctx.textAlign="right";ctx.textBaseline="middle";ctx.fillText((mx-((mx-mn)/4)*i).toFixed(1),pL-6,yy);}ctx.strokeStyle=cP;ctx.lineWidth=2.5;ctx.beginPath();sorted.forEach((r,i)=>{const x=X(i),y=Y(r.weight);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.stroke();sorted.forEach((r,i)=>{ctx.beginPath();ctx.arc(X(i),Y(r.weight),4,0,Math.PI*2);ctx.fillStyle=cPl;ctx.fill();});}
+function hasAnyData(){return Object.values(state.profiles||{}).some(p=>{const d=p.data||{};return["food","weight","workouts","activity","exerciseLog"].some(k=>(d[k]||[]).length);});}
+function backupAgeDays(){if(!state.lastBackup)return null;return Math.round((new Date(todayISO()+"T00:00:00")-new Date(state.lastBackup+"T00:00:00"))/864e5);}
+function checkBackup(){
+  const age=backupAgeDays();const info=document.getElementById("backupInfo");
+  if(info)info.textContent=age==null?"Резервная копия ещё не делалась. Данные хранятся только в этом браузере.":`Последняя копия: ${age===0?"сегодня":age+" дн. назад"} (${fmtDate(state.lastBackup)}).`;
+  const b=document.getElementById("backupBanner");if(!b)return;
+  const due=hasAnyData()&&(age==null||age>=7)&&!(state.backupSnooze&&state.backupSnooze>todayISO());
+  b.hidden=!due;if(due)document.getElementById("backupText").textContent=age==null?"Данные хранятся только в этом браузере. Если его очистить, записи пропадут.":`Последняя копия была ${age} дн. назад.`;
+}
+function snoozeBackup(){const d=new Date();d.setDate(d.getDate()+3);state.backupSnooze=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;save();checkBackup();showToast("Напомню через 3 дня");}
+function goalWeight(){const g=Number(pdata().goalWeight);return g>0?g:null;}
+function setGoalWeight(v){const g=Number(v);const el=document.getElementById("wd_goal");if(v!==""&&(!(g>=30)||g>300)){el.classList.add("invalid");showToast("Цель: от 30 до 300 кг");return;}pdata().goalWeight=v===""?null:g;save();renderWeightStats();drawChart();showToast(v===""?"Цель убрана":`🎯 Цель: ${g} кг`);}
+function renderWeightStats(){
+  const box=document.getElementById("w_stats");if(!box)return;const g=goalWeight();const gi=document.getElementById("wd_goal");if(gi&&document.activeElement!==gi)gi.value=g??"";
+  const rows=[...weightLog].sort((a,b)=>a.date.localeCompare(b.date));
+  if(!rows.length){box.innerHTML="";return;}
+  const last=rows[rows.length-1];const dayMs=864e5;const dt=x=>new Date(x+"T00:00:00").getTime();
+  const win=rows.filter(r=>dt(last.date)-dt(r.date)<=28*dayMs);const first=win[0];const days=(dt(last.date)-dt(first.date))/dayMs;
+  const rate=days>=3?(last.weight-first.weight)/days*7:null;
+  const fmt=v=>(v>0?"+":v<0?"−":"")+Math.abs(v).toFixed(1);
+  const items=[`<div><span>Сейчас</span><b>${num(last.weight,1)} кг</b></div>`];
+  items.push(`<div><span>Темп</span><b>${rate==null?"мало данных":fmt(rate)+" кг/нед"}</b></div>`);
+  if(g){const left=last.weight-g;let eta="";if(rate!=null&&Math.abs(left)>=0.1&&Math.sign(rate)===-Math.sign(left)&&Math.abs(rate)>=0.05){const wk=Math.abs(left/rate);eta=wk<1?"меньше недели":`≈ ${Math.round(wk)} нед.`;}
+    items.push(`<div><span>До цели</span><b>${Math.abs(left)<0.1?"🎉 цель достигнута":Math.abs(left).toFixed(1)+" кг"}</b>${eta?`<small>${eta}</small>`:""}</div>`);}
+  else items.push(`<div><span>Цель</span><b class="muted">не задана</b></div>`);
+  box.innerHTML=items.join("");
+}
+function removeWeight(date){weightLog=weightLog.filter(x=>x.date!==date);save();renderWeight();drawChart();renderWeightStats();}
+function drawChart(){const cv=document.getElementById("wchart");if(!cv)return;const cs=getComputedStyle(document.body);const cP=cs.getPropertyValue('--p').trim()||"#2980b9";const cPl=cs.getPropertyValue('--pl').trim()||"#5dade2";const cBd=cs.getPropertyValue('--bd').trim()||"#d6e3ec";const dpr=window.devicePixelRatio||1;const r=cv.parentElement.getBoundingClientRect();const W=r.width,H=r.height;cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);cv.style.width=W+"px";cv.style.height=H+"px";const ctx=cv.getContext("2d");ctx.setTransform(dpr,0,0,dpr,0,0);ctx.clearRect(0,0,W,H);const sorted=[...weightLog].sort((a,b)=>a.date.localeCompare(b.date));if(sorted.length<2){ctx.fillStyle="#94a3b8";ctx.font="13px -apple-system";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("Нужны 2 записи",W/2,H/2);return;}const pL=42,pR=12,pT=14,pB=28;const cw=W-pL-pR,ch=H-pT-pB;const ws=sorted.map(x=>x.weight);const gw=goalWeight();if(gw)ws.push(gw);const mn=Math.min(...ws)-1,mx=Math.max(...ws)+1;const X=i=>pL+(i/(sorted.length-1))*cw;const Y=w=>pT+(1-(w-mn)/(mx-mn))*ch;ctx.strokeStyle=cBd;ctx.lineWidth=1;for(let i=0;i<=4;i++){const yy=pT+(ch/4)*i;ctx.beginPath();ctx.moveTo(pL,yy);ctx.lineTo(pL+cw,yy);ctx.stroke();ctx.fillStyle="#94a3b8";ctx.font="11px -apple-system";ctx.textAlign="right";ctx.textBaseline="middle";ctx.fillText((mx-((mx-mn)/4)*i).toFixed(1),pL-6,yy);}if(gw){const gy=Y(gw);ctx.save();ctx.setLineDash([6,5]);ctx.strokeStyle=cs.getPropertyValue("--ok").trim()||"#16a34a";ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(pL,gy);ctx.lineTo(pL+cw,gy);ctx.stroke();ctx.restore();ctx.fillStyle=cs.getPropertyValue("--ok").trim()||"#16a34a";ctx.font="600 11px -apple-system";ctx.textAlign="right";ctx.textBaseline="bottom";ctx.fillText("цель "+gw,pL+cw,gy-3);}ctx.strokeStyle=cP;ctx.lineWidth=2.5;ctx.beginPath();sorted.forEach((r,i)=>{const x=X(i),y=Y(r.weight);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});ctx.stroke();sorted.forEach((r,i)=>{ctx.beginPath();ctx.arc(X(i),Y(r.weight),4,0,Math.PI*2);ctx.fillStyle=cPl;ctx.fill();});}
 
 let lastReportData=null;
 function setReportLastWeek(){const to=todayISO();document.getElementById("rep_from").value=isoMinusDays(to,6);document.getElementById("rep_to").value=to;buildReport();}
@@ -1471,16 +1698,20 @@ function buildReport(){
     totals:{sumKcal:sumK,sumProt:sumP,sumFat:sumF,sumCarb:sumC,sumBurned:sumB,sumBurnedMin:sumBM,sumStepKcal:sumSK,sumNet:sumN,avgSteps:Math.round(sumSteps/dN)}};
   const rowsHtml=dr.map(r=>`<tr><td class="day-cell">${fmtDate(r.date)}</td><td>${r.kcal}</td><td>${r.prot}</td><td>${r.fat}</td><td>${r.carb}</td><td>${r.burned}</td><td>${r.stepsKcal}</td><td>${r.burnedMin}</td><td>${r.net}</td><td>${r.steps||"—"}</td><td>${r.weight?num(r.weight,1):"—"}</td></tr>`).join("");
   const totalRow=`<tr style="background:var(--surface4);font-weight:700"><td class="day-cell">Сумма</td><td>${sumK}</td><td>${sumP}</td><td>${sumF}</td><td>${sumC}</td><td>${sumB}</td><td>${sumSK}</td><td>${sumBM}</td><td>${sumN}</td><td>${Math.round(sumSteps/dN)||"—"}</td><td>—</td></tr>`;
-  document.getElementById("reportOutput").innerHTML=`<div class="card"><h2>📊 ${fmtDate(from)} — ${fmtDate(to)} (${dN} дн.)</h2><div class="report-wrap"><table class="report-table"><thead><tr><th>Дата</th><th>Ккал</th><th>Б</th><th>Ж</th><th>У</th><th>Сожж.</th><th>Шаги→ккал</th><th>Мин</th><th>Баланс</th><th>Шаги</th><th>Вес</th></tr></thead><tbody>${rowsHtml}${totalRow}</tbody></table></div></div>`;
+  document.getElementById("reportOutput").innerHTML=`<div class="card"><h2><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg>${fmtDate(from)} — ${fmtDate(to)} (${dN} дн.)</h2><p class="report-hint">↔ Таблицу можно прокручивать вбок</p><div class="report-wrap"><table class="report-table"><thead><tr><th>Дата</th><th>Ккал</th><th>Б</th><th>Ж</th><th>У</th><th>Сожж.</th><th>Шаги→ккал</th><th>Мин</th><th>Баланс</th><th>Шаги</th><th>Вес</th></tr></thead><tbody>${rowsHtml}${totalRow}</tbody></table></div></div>`;
 }
 
-function exportData(){const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="backup_"+todayISO()+".json";a.click();URL.revokeObjectURL(url);}
+function exportData(){state.lastBackup=todayISO();save();checkBackup();const blob=new Blob([JSON.stringify(state,null,2)],{type:"application/json"});const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download="backup_"+todayISO()+".json";a.click();URL.revokeObjectURL(url);}
 function importData(ev){const f=ev.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=e=>{try{const d=JSON.parse(e.target.result);if(d.profiles&&d.activeProfileId){state=d;}else throw new Error("Формат");Object.values(state.profiles).forEach(p=>{if(p.data){if(!p.data.activity)p.data.activity=[];if(!p.data.fridge)p.data.fridge=[];}});save();loadAll();showToast("Загружено");}catch(err){showToast("Ошибка: "+err.message);}};rd.readAsText(f);}
 function clearAllData(){if(!confirm("Удалить все данные текущего профиля?"))return;pdata().food=[];pdata().workouts=[];pdata().exerciseLog=[];pdata().weight=[];pdata().activity=[];pdata().fridge=[];pdata().menuOverrides={};save();loadAll();showToast("Данные удалены");}
 
 function loadProfile(){const p=profileData||{};document.getElementById("p_sex").value=p.sex||"m";document.getElementById("p_goal").value=p.goal||"cut";document.getElementById("p_age").value=p.age||30;document.getElementById("p_height").value=p.height||175;document.getElementById("p_weight").value=p.weight||75;document.getElementById("p_fat").value=p.fat||22;document.getElementById("p_act").value=p.act||"1.55";document.getElementById("nightMode").value=state.nightMode||"auto";document.getElementById("nightStart").value=state.nightStart??19;document.getElementById("nightEnd").value=state.nightEnd??7;applyTheme();}
 function saveProfile(){profileData={sex:document.getElementById("p_sex").value,goal:document.getElementById("p_goal").value,age:Number(document.getElementById("p_age").value),height:Number(document.getElementById("p_height").value),weight:Number(document.getElementById("p_weight").value),fat:Number(document.getElementById("p_fat").value),act:document.getElementById("p_act").value};save();updateChip();}
 function calcAll(){
+  const LIMITS={p_age:["Возраст",10,100],p_height:["Рост",100,250],p_weight:["Вес",30,300],p_fat:["% жира",3,70]};
+  const bad=[];
+  Object.entries(LIMITS).forEach(([id,[name,min,max]])=>{const el=document.getElementById(id);const raw=el.value.trim();const v=Number(raw);const ok=raw!==""&&isFinite(v)&&v>=min&&v<=max;el.classList.toggle("invalid",!ok);if(!ok)bad.push(`${name} (${min}–${max})`);});
+  if(bad.length){showToast("Проверьте: "+bad.join(", "));return false;}
   const readNum=(id,min,max,def)=>{let v=Number(document.getElementById(id).value);if(!isFinite(v)||v<=0)v=def;return Math.min(max,Math.max(min,v));};
   const sex=document.getElementById("p_sex").value;const goal=document.getElementById("p_goal").value;
   const age=Math.round(readNum("p_age",10,100,30));const height=Math.round(readNum("p_height",100,250,175));
@@ -1516,6 +1747,12 @@ function calcAll(){
   document.getElementById("out_water_norm").textContent=`${targetWater.toFixed(1)} л`;
   targets={kcal:targetKcal,prot:targetProt,fat:targetFat,carb:targetCarb};save();renderDash();updateSubtitle();updateChip();renderMenu();
 }
+function waterTarget(){const pd=profileData||{};const w=Number(pd.weight)||75,h=Number(pd.height)||175,fp=(Number(pd.fat)||22)/100;try{return getWaterTarget(w,w*(1-fp),w/((h/100)**2));}catch(e){return w*0.033;}}
+function addWater(l){const d=todayISO();let r=activity.find(x=>x.date===d);if(!r){r={date:d,steps:0,sleep:0,water:0,feel:0,weightAtEvent:getWeight()};activity.push(r);}r.water=Math.round(((Number(r.water)||0)+l)*100)/100;save();const a=document.getElementById("a_date"),aw=document.getElementById("a_water");if(a&&aw&&(a.value||d)===d)aw.value=r.water;renderDash();if(document.getElementById("activity").classList.contains("active"))renderActivity();showToast(`💧 Вода: ${+num(r.water,2)} из ${+num(waterTarget(),1)} л`);}
+function goTo(tab,cardSel,focusId){switchTab(tab);setTimeout(()=>{const el=document.querySelector(cardSel);if(!el)return;el.scrollIntoView({behavior:"smooth",block:"start"});el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash");if(focusId)setTimeout(()=>document.getElementById(focusId)?.focus({preventScroll:true}),350);},60);}
+function quickFood(){goTo("food",'#food .card:has(#prod_search)',"prod_search");}
+function quickWorkout(){goTo("activity",'#activity .card:has(#wk_type)');}
+function quickWeight(){goTo("weight",'#weight .card:has(#wd_weight)',"wd_weight");}
 function renderDash(){
   const today=todayISO();
   const tf=food.filter(x=>x.date===today);
@@ -1540,22 +1777,39 @@ function renderDash(){
   document.getElementById("today_workout_kcal").textContent=`${wkKcal} ккал`;
   document.getElementById("today_eaten").textContent=num(k);
   document.getElementById("today_net").textContent=`${num(k-totalBurned)} ккал`;
+  const budget=t.kcal+totalBurned,left=Math.round(budget-k);
+  const ring=document.getElementById("kcalRing");
+  if(ring){const C=2*Math.PI*52,fg=document.getElementById("ring_fg");const pct=budget>0?k/budget:0;fg.style.strokeDasharray=C;fg.style.strokeDashoffset=C*(1-Math.min(1,pct));fg.style.opacity=pct>0?1:0;ring.classList.toggle("warn",pct>0.9&&pct<=1.05);ring.classList.toggle("over",pct>1.05);
+    document.getElementById("ring_left").textContent=num(Math.abs(left));document.getElementById("ring_cap").textContent=left>=0?"ккал осталось":"ккал сверх нормы";
+    document.getElementById("rs_target").textContent=num(t.kcal);document.getElementById("rs_eaten").textContent=num(k);document.getElementById("rs_burned").textContent=num(totalBurned);
+    document.getElementById("rs_water").textContent=`${+num(act.water,2)} / ${+num(waterTarget(),1)} л`;
+    const dd=new Date();document.getElementById("today_date").textContent=dd.toLocaleDateString("ru-RU",{weekday:"long",day:"numeric",month:"long"});
+    const pd=profileData||{};const gT=pd.goal==="bulk"?"набор":pd.goal==="maintain"?"поддержание":"похудение";document.getElementById("pl_summary").textContent=`${pd.sex==="f"?"Ж":"М"} · ${pd.age||30} лет · ${pd.height||175} см · ${pd.weight||75} кг · ${gT}`;}
 }
 function setBar(id,v,tg){const el=document.getElementById(id);if(!el)return;const pct=tg?Math.min(150,(v/tg)*100):0;el.style.width=Math.min(100,pct)+"%";const w=el.parentElement;w.classList.remove("warn","over");if(pct>110)w.classList.add("over");else if(pct>90)w.classList.add("warn");}
 
+const MORE_TABS=["activity","fridge","report","settings"];
+function openMoreMenu(){document.getElementById("moreModal").classList.add("show");}
+function closeMoreMenu(){document.getElementById("moreModal").classList.remove("show");}
+function openFromMore(tab){closeMoreMenu();switchTab(tab);}
 function switchTab(tab){
   document.querySelectorAll("nav.top-nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
-  document.querySelectorAll("nav.bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+  document.querySelectorAll("nav.bottom-nav button[data-tab]").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+  document.getElementById("moreBtn").classList.toggle("active",MORE_TABS.includes(tab));
+  document.querySelectorAll(".more-list button").forEach(b=>b.classList.toggle("active",b.dataset.more===tab));
   document.querySelectorAll("section").forEach(s=>{s.classList.remove("active");if(s.id===tab){void s.offsetWidth;s.classList.add("active");}});
   window.scrollTo({top:0,behavior:"instant"});
-  if(tab==="dash")renderDash();
+  if(tab==="dash"){renderDash();checkBackup();}
   if(tab==="food"){renderMenu();renderFood();initFoodSearch();}
-  if(tab==="activity"){renderExerciseLibrary();renderExerciseLog();renderWorkouts();renderActivity();updateWorkoutPreview();}
+  if(tab==="activity"){renderWorkouts();renderActivity();updateWorkoutPreview();}
+  if(tab==="workout"){renderExerciseLibrary();renderExerciseLog();updateExTodayStats();updateWorkoutTodayStats();}
   if(tab==="fridge"){renderFridge();}
-  if(tab==="weight"){renderWeight();drawChart();}
+  if(tab==="weight"){renderWeight();drawChart();renderWeightStats();}
   if(tab==="report")buildReport();
   if(tab==="settings"){applyNightMode();applyColorTheme();}
 }
+document.addEventListener("input",e=>{if(e.target.classList&&e.target.classList.contains("invalid"))e.target.classList.remove("invalid");});
+document.addEventListener("input",e=>{if(e.target.id==="ex_search")filterExercises();});
 function setupNav(){
   function handle(e){const t=e.target.closest("[data-tab]");if(!t||!t.closest(".top-nav, .bottom-nav"))return;e.preventDefault();e.stopPropagation();switchTab(t.dataset.tab);}
   let lt=0;
@@ -1576,16 +1830,16 @@ function loadAll(){
   updateChip();loadProfile();calcAll();
   renderMenu();setupMenuEditDelegation();
   renderFood();initFoodSearch();
-  renderExerciseLibrary();renderExerciseLog();updateExTodayStats();
+  renderExerciseLibrary();renderExerciseLog();updateExTodayStats();updateWorkoutTodayStats();
   initWorkoutSelect();renderWorkouts();renderActivity();updateWorkoutPreview();updateStepsPreview();
   renderFridge();setupFridgeEvents();
-  renderWeight();drawChart();buildReport();updateSubtitle();applyTheme();
+  renderWeight();drawChart();renderWeightStats();buildReport();updateSubtitle();applyTheme();checkBackup();
 }
 let _inited=false;
 function init(){
   if(_inited)return;_inited=true;
   const t=todayISO();
-  ["food_view_date","wd_date","ex_view_date","q_date","wk_date","wk_view_date","a_date"].forEach(id=>{const el=document.getElementById(id);if(el)el.value=t;});
+  ["food_view_date","wd_date","ex_view_date","q_date","wk_date","wk_view_date","a_date"].forEach(id=>{const el=document.getElementById(id);if(el)el.value=t;});{const h=new Date().getHours();const qm=document.getElementById("q_meal");if(qm)qm.value=h<11?"Завтрак":h<16?"Обед":h<21?"Ужин":"Перед сном";}
   document.getElementById("rep_to").value=t;
   document.getElementById("rep_from").value=isoMinusDays(t,6);
   loadAll();setupHandlers();setupNav();
@@ -1599,11 +1853,10 @@ function init(){
   document.getElementById("rep_to").addEventListener("change",buildReport);
   document.getElementById("food_view_date").addEventListener("change",renderFood);
   document.getElementById("wk_view_date")?.addEventListener("change",renderWorkouts);
-  ["nightStart","nightEnd"].forEach(id=>document.getElementById(id).addEventListener("change",e=>{let v=Math.round(Number(e.target.value));if(!isFinite(v))v=id==="nightStart"?19:7;v=Math.min(23,Math.max(0,v));e.target.value=v;state[id]=v;save();applyNightMode();}));
   if(window.innerWidth<700)document.getElementById("topNav").style.display="none";
   else{document.getElementById("topNav").style.display="flex";document.getElementById("bottomNav").style.display="none";document.querySelector("main").style.paddingBottom="20px";}
 }
-window.addEventListener("resize",()=>{const t=document.getElementById("topNav"),b=document.getElementById("bottomNav");const m=document.querySelector("main");if(window.innerWidth<700){t.style.display="none";b.style.display="flex";m.style.paddingBottom="";}else{t.style.display="flex";b.style.display="none";m.style.paddingBottom="20px";}});
+window.addEventListener("resize",()=>{const t=document.getElementById("topNav"),b=document.getElementById("bottomNav");if(window.innerWidth<700){t.style.display="none";b.style.display="flex";}else{t.style.display="flex";b.style.display="none";}});
 
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);
 else init();
